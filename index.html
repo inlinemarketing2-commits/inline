@@ -1,0 +1,2250 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InLine – An Integrated Educational EcoSystem | The Virtual School</title>
+  <meta name="description" content="InLine – An Integrated Educational EcoSystem based in Perinthalmanna, Kerala. Empowering students through IGNITE (Competitive Exams), The Virtual School (Tuition 5-12), Talentium (Skill Training), and EduForge (Teacher Training).">
+  
+  <!-- Favicon using Logo -->
+  <link rel="icon" type="image/jpeg" href="LOGO.jpeg">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Canvas Confetti for Interactive Registrations -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+
+  <!-- Tailwind CSS CDN with Custom Configurations -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              navy: '#0B192C',
+              dark: '#08121f',
+              blue: '#0284c7',
+              sky: '#38bdf8',
+              teal: '#0d9488',
+              emerald: '#10b981',
+              amber: '#f59e0b',
+              gold: '#eab308',
+              rose: '#e11d48',
+              purple: '#4c2576',
+              violet: '#6366f1'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Outfit"', 'sans-serif']
+          },
+          animation: {
+            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'float': 'float 4s ease-in-out infinite',
+            'shine': 'shine 2s linear infinite'
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-10px)' },
+            },
+            shine: {
+              '0%': { backgroundPosition: '200% 0' },
+              '100%': { backgroundPosition: '-200% 0' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0b192c;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1e3a8a;
+      border-radius: 5px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #0284c7;
+    }
+
+    /* Glassmorphism Classes */
+    .glass-nav {
+      background: rgba(11, 25, 44, 0.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glass-card-light {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(226, 232, 240, 0.8);
+    }
+    .text-gradient {
+      background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #f43f5e 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .text-gold-gradient {
+      background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+</head>
+<body class="bg-[#08121f] text-slate-100 font-sans antialiased overflow-x-hidden selection:bg-brand-blue selection:text-white">
+
+  <!-- TOP TICKER ANNOUNCEMENT BAR -->
+  <div class="bg-gradient-to-r from-brand-purple via-indigo-900 to-brand-navy py-2 px-4 border-b border-indigo-500/20 text-xs sm:text-sm font-medium">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-2 overflow-hidden">
+        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-bold bg-amber-400 text-slate-950 animate-pulse">
+          <i class="fa-solid fa-bullhorn mr-1.5"></i> ADMISSIONS OPEN 2026-27
+        </span>
+        <span class="text-slate-200 truncate">
+          +2 Tuition (CBSE & State) | NMMS Mock Tests with Malappuram Block Panchayat | ₹3000/Subject Bridge
+        </span>
+      </div>
+      <div class="flex items-center gap-4 text-xs shrink-0">
+        <a href="tel:+919061211227" class="hover:text-amber-300 transition flex items-center gap-1.5 text-slate-200">
+          <i class="fa-solid fa-phone text-emerald-400"></i> <span class="hidden sm:inline">Helpdesk:</span> +91 9061211227
+        </a>
+        <span class="text-slate-600 hidden sm:inline">|</span>
+        <span class="text-slate-300 hidden md:flex items-center gap-1">
+          <i class="fa-solid fa-location-dot text-rose-400"></i> Perinthalmanna, Malappuram
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- STICKY HEADER & NAVBAR -->
+  <header class="sticky top-0 z-50 glass-nav transition-all duration-300 shadow-xl shadow-black/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo & Branding -->
+        <a href="#" class="flex items-center gap-3 group">
+          <div class="h-12 sm:h-14 px-3 py-1 bg-white rounded-xl shadow-md shadow-sky-500/10 group-hover:shadow-sky-500/30 transition-all duration-300 flex items-center justify-center border border-slate-200">
+            <img src="LOGO.jpeg" alt="InLine – The Virtual School" class="h-full w-auto object-contain">
+          </div>
+          <div class="hidden sm:block">
+            <div class="flex items-center gap-1.5">
+              <span class="text-[10px] font-extrabold uppercase tracking-widest px-2 py-0.5 rounded-md bg-brand-sky/20 text-brand-sky border border-brand-sky/30">EcoSystem</span>
+              <span class="text-[11px] font-bold text-slate-300">Perinthalmanna</span>
+            </div>
+            <p class="text-[10px] text-slate-400 font-medium tracking-wide">An Integrated Educational EcoSystem</p>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold text-slate-300">
+          <a href="#about" class="hover:text-brand-sky transition duration-150">About</a>
+          <a href="#wings" class="hover:text-brand-sky transition duration-150 flex items-center gap-1">
+            4 Core Wings <i class="fa-solid fa-chevron-down text-[10px] text-slate-500"></i>
+          </a>
+          <a href="#gallery" class="hover:text-brand-sky transition duration-150">Campaigns</a>
+          <a href="#calculator" class="hover:text-amber-400 transition duration-150 flex items-center gap-1.5">
+            <i class="fa-solid fa-calculator text-amber-400"></i> Fee Calculator
+          </a>
+          <a href="#mock-test" class="hover:text-brand-sky transition duration-150">NMMS Mock Test</a>
+          <a href="#campus-life" class="hover:text-brand-sky transition duration-150">Campus Life</a>
+          <a href="#contact" class="hover:text-brand-sky transition duration-150">Contact</a>
+        </nav>
+
+        <!-- Right Action Buttons -->
+        <div class="hidden sm:flex items-center gap-3">
+          <a href="https://wa.me/919061211227?text=Hello%20InLine%20Team!%20I%20would%20like%20to%20know%20more%20about%20your%20courses%20and%20admissions." 
+             target="_blank" 
+             class="px-4 py-2.5 rounded-xl text-xs font-bold bg-emerald-500/10 text-emerald-400 hover:bg-emerald-500/20 border border-emerald-500/30 transition flex items-center gap-2">
+            <i class="fa-brands fa-whatsapp text-sm text-emerald-400"></i> WhatsApp
+          </a>
+
+          <button onclick="openModal('enrollmentModal')" 
+                  class="px-5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider bg-gradient-to-r from-brand-sky to-indigo-600 hover:from-sky-400 hover:to-indigo-500 text-white shadow-lg shadow-sky-500/20 hover:shadow-sky-500/40 transition transform active:scale-95 flex items-center gap-2">
+            <i class="fa-solid fa-graduation-cap"></i> Enroll Now
+          </button>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobileMenuBtn" class="lg:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 focus:outline-none" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars text-xl" id="menuIcon"></i>
+        </button>
+
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobileMenu" class="hidden lg:hidden border-t border-slate-800/80 bg-brand-navy/95 px-4 pt-3 pb-6 space-y-3">
+      <div class="flex items-center gap-3 pb-3 border-b border-slate-800">
+        <div class="h-10 px-2.5 py-1 bg-white rounded-lg flex items-center shadow-sm border border-slate-200">
+          <img src="LOGO.jpeg" alt="InLine Logo" class="h-full w-auto object-contain">
+        </div>
+        <div class="text-[11px] text-slate-300 font-semibold">
+          InLine Educational EcoSystem
+        </div>
+      </div>
+      <a href="#about" class="block py-2 text-slate-300 hover:text-white font-medium border-b border-slate-800">About InLine</a>
+      <a href="#wings" class="block py-2 text-slate-300 hover:text-white font-medium border-b border-slate-800">The 4 Core Wings</a>
+      <a href="#gallery" class="block py-2 text-slate-300 hover:text-white font-medium border-b border-slate-800">Posters & Campaigns</a>
+      <a href="#calculator" class="block py-2 text-amber-400 font-semibold border-b border-slate-800"><i class="fa-solid fa-calculator mr-2"></i> Tuition Fee Calculator</a>
+      <a href="#mock-test" class="block py-2 text-slate-300 hover:text-white font-medium border-b border-slate-800">NMMS 2026-27 Mock Test</a>
+      <a href="#campus-life" class="block py-2 text-slate-300 hover:text-white font-medium border-b border-slate-800">Campus Reels & Videos</a>
+      <a href="#contact" class="block py-2 text-slate-300 hover:text-white font-medium border-b border-slate-800">Perinthalmanna Campus & Contact</a>
+
+      <div class="pt-2 flex flex-col gap-2">
+        <button onclick="openModal('enrollmentModal')" class="w-full py-3 rounded-xl font-bold bg-brand-sky text-slate-950 text-center text-sm shadow">
+          Enroll Now / Apply
+        </button>
+        <a href="https://wa.me/919061211227" class="w-full py-3 rounded-xl font-bold bg-emerald-600 text-white text-center text-sm flex items-center justify-center gap-2">
+          <i class="fa-brands fa-whatsapp text-lg"></i> Chat on WhatsApp
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative pt-12 pb-20 md:pt-20 md:pb-28 overflow-hidden">
+    <!-- Ambient Background Lighting -->
+    <div class="absolute top-0 left-1/4 w-96 h-96 bg-brand-sky/15 rounded-full blur-3xl pointer-events-none -z-10"></div>
+    <div class="absolute top-1/3 right-10 w-96 h-96 bg-brand-purple/25 rounded-full blur-3xl pointer-events-none -z-10"></div>
+    <div class="absolute bottom-10 left-10 w-80 h-80 bg-rose-500/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        
+        <!-- Hero Left Column: Narrative & CTA -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          
+          <!-- Official InLine Brand Logo & Trust Badges on Hero -->
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3.5">
+            <div class="bg-white px-4 py-2 rounded-2xl shadow-xl shadow-sky-500/10 border border-slate-200 flex items-center hover:scale-105 transition-transform duration-300">
+              <img src="LOGO.jpeg" alt="InLine – The Virtual School" class="h-11 sm:h-13 w-auto object-contain">
+            </div>
+            <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-slate-800/90 border border-slate-700 text-xs sm:text-sm text-slate-300 shadow-inner">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+              <span class="font-semibold text-emerald-400">Panchayat & Govt Partner</span>
+              <span class="text-slate-500">•</span>
+              <span class="text-slate-300">Kerala State & CBSE</span>
+            </div>
+          </div>
+
+          <!-- Main Headline -->
+          <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.15] tracking-tight">
+            Redefining Learning: <br class="hidden sm:inline">
+            <span class="text-gradient">From Foundational Roots to Professional Growth</span>
+          </h1>
+
+          <!-- Subtitle -->
+          <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+            Welcome to <strong class="text-white">InLine</strong> — Kerala's premier integrated educational ecosystem. 
+            Blending high-touch classroom mastery in <span class="text-brand-sky font-semibold">Perinthalmanna</span> with an advanced 
+            <span class="text-indigo-400 font-semibold">Virtual School</span>. From high-school & +2 board triumphs to NMMS, NEET, CUET, and accredited teacher training.
+          </p>
+
+          <!-- Action Buttons Group -->
+          <div class="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-4">
+            <button onclick="openModal('enrollmentModal')" class="px-7 py-4 rounded-xl text-sm font-bold bg-gradient-to-r from-brand-sky via-sky-500 to-indigo-600 hover:from-sky-400 hover:to-indigo-500 text-white shadow-xl shadow-sky-500/25 hover:shadow-sky-500/40 transform hover:-translate-y-0.5 active:translate-y-0 transition duration-200 flex items-center gap-3">
+              <i class="fa-solid fa-paper-plane"></i> Apply for 2026-27 Intake
+            </button>
+            <a href="#calculator" class="px-6 py-4 rounded-xl text-sm font-bold bg-slate-800/90 hover:bg-slate-700/90 text-amber-300 border border-amber-400/30 hover:border-amber-400/60 shadow-lg transition flex items-center gap-2">
+              <i class="fa-solid fa-calculator"></i> Calculate Tuition (₹3000/Sub)
+            </a>
+            <a href="#mock-test" class="px-5 py-4 rounded-xl text-sm font-semibold text-slate-300 hover:text-white bg-white/5 hover:bg-white/10 border border-white/10 transition flex items-center gap-2">
+              <i class="fa-solid fa-calendar-check text-brand-sky"></i> NMMS Mock Test
+            </a>
+          </div>
+
+          <!-- Highlight Metrics Ribbon -->
+          <div class="pt-8 grid grid-cols-2 sm:grid-cols-4 gap-4 border-t border-slate-800/80">
+            <div class="p-3 rounded-xl bg-slate-900/40 border border-slate-800/60">
+              <div class="font-display text-2xl sm:text-3xl font-extrabold text-brand-sky">4,500+</div>
+              <div class="text-xs text-slate-400 mt-1">Students Guided</div>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-900/40 border border-slate-800/60">
+              <div class="font-display text-2xl sm:text-3xl font-extrabold text-emerald-400">98.4%</div>
+              <div class="text-xs text-slate-400 mt-1">+2 Victory Rate</div>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-900/40 border border-slate-800/60">
+              <div class="font-display text-2xl sm:text-3xl font-extrabold text-amber-400">4 Wings</div>
+              <div class="text-xs text-slate-400 mt-1">Holistic Spectrum</div>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-900/40 border border-slate-800/60">
+              <div class="font-display text-2xl sm:text-3xl font-extrabold text-rose-400">15+</div>
+              <div class="text-xs text-slate-400 mt-1">Partner Schools & Panchayats</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Hero Right Column: Interactive Featured Campaign Card & Video Reel Preview -->
+        <div class="lg:col-span-5 relative">
+          
+          <!-- Decorative Glow & Ring -->
+          <div class="absolute -inset-1 rounded-3xl bg-gradient-to-r from-brand-sky via-purple-600 to-rose-500 opacity-30 blur-xl"></div>
+          
+          <div class="relative rounded-3xl glass-card p-4 sm:p-5 overflow-hidden shadow-2xl">
+            
+            <!-- Card Header Badge -->
+            <div class="flex items-center justify-between pb-3 mb-3 border-b border-slate-700/60">
+              <div class="flex items-center gap-2.5">
+                <div class="h-6 px-1.5 py-0.5 bg-white rounded-md flex items-center shadow-sm">
+                  <img src="LOGO.jpeg" alt="InLine Logo" class="h-full w-auto object-contain">
+                </div>
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-200">Campaign Spotlight</span>
+              </div>
+              <span class="text-xs px-2.5 py-0.5 rounded-full bg-brand-sky/10 text-brand-sky font-semibold border border-brand-sky/20">
+                Official Campaigns
+              </span>
+            </div>
+
+            <!-- Poster Showcase Carousel inside Card -->
+            <div class="relative rounded-2xl overflow-hidden aspect-[4/5] bg-slate-950 group">
+              <img id="heroPosterImg" src="poster1.jpg" alt="+2 Tuition InLine Poster" class="w-full h-full object-contain sm:object-cover transition duration-500 group-hover:scale-105">
+              
+              <!-- Gradient Overlay on Hover -->
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-80 pointer-events-none"></div>
+
+              <!-- Poster Caption & Switcher Controls -->
+              <div class="absolute bottom-3 left-3 right-3 p-3 rounded-xl bg-slate-900/90 backdrop-blur-md border border-slate-700/80">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <h2 id="heroPosterTitle" class="text-sm font-bold text-white leading-tight">+2 Tuition: CBSE | State Syllabus</h2>
+                    <p id="heroPosterSub" class="text-xs text-slate-300">Dream of +2 Victory • ₹3,000 / Subject Bridge</p>
+                  </div>
+                  <button onclick="openPosterModal(currentHeroPosterIndex)" class="p-2 rounded-lg bg-brand-sky text-slate-950 hover:bg-sky-400 transition" title="View Full High-Res Poster">
+                    <i class="fa-solid fa-expand text-xs"></i>
+                  </button>
+                </div>
+
+                <!-- Poster thumbnail switcher buttons -->
+                <div class="flex items-center gap-1.5 mt-2.5 pt-2 border-t border-slate-800">
+                  <span class="text-[10px] text-slate-400 mr-1 uppercase tracking-wider font-semibold">Posters:</span>
+                  <button onclick="switchHeroPoster(0)" class="w-6 h-6 rounded text-[11px] font-bold bg-brand-sky text-slate-950 transition" id="pBtn0">1</button>
+                  <button onclick="switchHeroPoster(1)" class="w-6 h-6 rounded text-[11px] font-bold bg-slate-800 text-slate-300 hover:bg-slate-700 transition" id="pBtn1">2</button>
+                  <button onclick="switchHeroPoster(2)" class="w-6 h-6 rounded text-[11px] font-bold bg-slate-800 text-slate-300 hover:bg-slate-700 transition" id="pBtn2">3</button>
+                  <button onclick="switchHeroPoster(3)" class="w-6 h-6 rounded text-[11px] font-bold bg-slate-800 text-slate-300 hover:bg-slate-700 transition" id="pBtn3">4</button>
+                  <button onclick="switchHeroPoster(4)" class="w-6 h-6 rounded text-[11px] font-bold bg-slate-800 text-slate-300 hover:bg-slate-700 transition" id="pBtn4">5</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quick Direct Call Helper under Hero Card -->
+            <div class="mt-3 pt-3 flex items-center justify-between text-xs text-slate-400">
+              <span class="flex items-center gap-1.5">
+                <i class="fa-solid fa-shield-halved text-emerald-400"></i> Verified InLine Admission Hotline
+              </span>
+              <a href="tel:+919061211227" class="text-brand-sky hover:underline font-bold">
+                9061211227
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- COLLABORATION & TRUSTED PARTNERS MARQUEE -->
+  <section class="py-10 bg-slate-950/80 border-y border-slate-800/80 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-center text-xs uppercase tracking-widest font-bold text-slate-400 mb-6">
+        Proud Educational Collaborations & Institutional Programs
+      </p>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 text-center">
+        
+        <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-indigo-500/50 transition">
+          <div class="text-amber-400 text-lg mb-1"><i class="fa-solid fa-landmark"></i></div>
+          <div class="font-bold text-xs text-white">Malappuram Block Panchayat</div>
+          <div class="text-[10px] text-slate-400">imbibe NMMS Project</div>
+        </div>
+
+        <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-indigo-500/50 transition">
+          <div class="text-brand-sky text-lg mb-1"><i class="fa-solid fa-school"></i></div>
+          <div class="font-bold text-xs text-white">VidhyaLine Academy</div>
+          <div class="text-[10px] text-slate-400">Perinthalmanna Hub</div>
+        </div>
+
+        <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-indigo-500/50 transition">
+          <div class="text-rose-400 text-lg mb-1"><i class="fa-solid fa-handshake-angle"></i></div>
+          <div class="font-bold text-xs text-white">KREA Mudra</div>
+          <div class="text-[10px] text-slate-400">MLA Educational Project</div>
+        </div>
+
+        <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-indigo-500/50 transition">
+          <div class="text-emerald-400 text-lg mb-1"><i class="fa-solid fa-building-columns"></i></div>
+          <div class="font-bold text-xs text-white">Darul Falah</div>
+          <div class="text-[10px] text-slate-400">Academic Outreach</div>
+        </div>
+
+        <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-indigo-500/50 transition">
+          <div class="text-violet-400 text-lg mb-1"><i class="fa-solid fa-chalkboard-user"></i></div>
+          <div class="font-bold text-xs text-white">XCEED Hub & NISA</div>
+          <div class="text-[10px] text-slate-400">Skill Ecosystem</div>
+        </div>
+
+        <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-indigo-500/50 transition">
+          <div class="text-cyan-400 text-lg mb-1"><i class="fa-solid fa-graduation-cap"></i></div>
+          <div class="font-bold text-xs text-white">AMU Alumni & D-NOTE</div>
+          <div class="text-[10px] text-slate-400">Entrance & EdTech Wing</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT INLINE SECTION -->
+  <section id="about" class="py-20 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left: Mission & Architecture -->
+        <div class="lg:col-span-6 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-sky/10 text-brand-sky border border-brand-sky/20 text-xs font-bold uppercase tracking-wider">
+            About InLine Educational Ecosystem
+          </div>
+          <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-white leading-snug">
+            A Unified Educational Framework Built for Real-World Achievement
+          </h2>
+          <p class="text-slate-300 leading-relaxed">
+            Operating from the educational heartbeat of <strong class="text-white">Perinthalmanna</strong>, 
+            <strong class="text-brand-sky">InLine</strong> was envisioned to bridge the gap between ordinary rote-learning 
+            and transformative, future-ready education. By seamlessly combining physical classroom mentorship at our campus 
+            hub with cutting-edge digital live sessions via <strong class="text-indigo-400">The Virtual School</strong>, we empower 
+            learners across every milestone.
+          </p>
+          <p class="text-slate-300 leading-relaxed">
+            Whether securing coveted government scholarships like <strong class="text-amber-400">NMMS</strong>, conquering 
+            <strong class="text-white">+2 Board Exams</strong> with 90%+ marks, mastering AI tools, or certifying as next-generation 
+            foundation teachers — InLine delivers structured, personalized, and result-oriented training.
+          </p>
+
+          <!-- Core Value Cards -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+            <div class="p-4 rounded-xl bg-slate-900/50 border border-slate-800 hover:border-slate-700 transition">
+              <i class="fa-solid fa-microscope text-brand-sky text-xl mb-2"></i>
+              <h3 class="font-bold text-white text-sm">Conceptual Mastery</h3>
+              <p class="text-xs text-slate-400 mt-1">Deep subject immersion in Malayalam and English for lasting retention.</p>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-900/50 border border-slate-800 hover:border-slate-700 transition">
+              <i class="fa-solid fa-users-viewfinder text-emerald-400 text-xl mb-2"></i>
+              <h3 class="font-bold text-white text-sm">Individual Mentorship</h3>
+              <p class="text-xs text-slate-400 mt-1">Dedicated mentors track weekly performance, OMR metrics, and doubt resolution.</p>
+            </div>
+          </div>
+
+          <div class="pt-2">
+            <a href="#wings" class="inline-flex items-center gap-2 text-sm font-bold text-brand-sky hover:text-sky-300 transition">
+              Explore Our 4 Dedicated Wings <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Real Photo Collage & Impact Badge -->
+        <div class="lg:col-span-6 relative">
+          <div class="relative rounded-3xl overflow-hidden glass-card p-3 shadow-2xl border border-slate-800">
+            <!-- Collage image from poster4.jpg -->
+            <div class="rounded-2xl overflow-hidden aspect-[16/11] bg-slate-950 relative group">
+              <img src="poster4.jpg" alt="VidhyaLine InLine NMMS Mock Test Classroom" class="w-full h-full object-cover group-hover:scale-102 transition duration-500">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-70"></div>
+              
+              <div class="absolute bottom-4 left-4 right-4 p-3 rounded-xl bg-slate-900/90 backdrop-blur-md border border-slate-700/80 flex items-center justify-between">
+                <div>
+                  <div class="text-xs font-bold text-white flex items-center gap-2">
+                    <i class="fa-solid fa-camera text-brand-sky"></i> InLine & VidhyaLine Examination Hall
+                  </div>
+                  <div class="text-[11px] text-slate-300 mt-0.5">Real test center photos: NMMS 2026 Mock Test in action</div>
+                </div>
+                <button onclick="openPosterModal(3)" class="px-3 py-1.5 rounded-lg bg-brand-sky text-slate-950 text-xs font-bold hover:bg-sky-400 transition">
+                  View Collage
+                </button>
+              </div>
+            </div>
+
+            <!-- Floating Pill Badge -->
+            <div class="absolute -top-3 -right-3 px-4 py-2 rounded-2xl bg-gradient-to-r from-amber-500 to-rose-500 text-slate-950 font-extrabold text-xs shadow-xl flex items-center gap-1.5">
+              <i class="fa-solid fa-award"></i> Registered Center: Perinthalmanna
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- THE 4 CORE WINGS OF INLINE (INTERACTIVE TABBED HUB) -->
+  <section id="wings" class="py-20 bg-slate-950/60 border-t border-slate-800 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-purple/30 text-indigo-300 border border-indigo-500/30 text-xs font-bold uppercase tracking-wider mb-3">
+          Comprehensive Educational Architecture
+        </div>
+        <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+          The 4 Pillars of the InLine Ecosystem
+        </h2>
+        <p class="text-slate-400 mt-4 text-base sm:text-lg">
+          From scholarship exams and school mastery to career skills and educator training — explore our specialized wings designed for structured growth.
+        </p>
+
+        <!-- Interactive Wings Selector Buttons -->
+        <div class="mt-8 flex flex-wrap items-center justify-center gap-2 p-1.5 rounded-2xl bg-slate-900 border border-slate-800">
+          <button onclick="switchWing('ignite')" id="tabBtn-ignite" class="wing-tab-btn px-5 py-3 rounded-xl text-xs sm:text-sm font-bold transition flex items-center gap-2 bg-gradient-to-r from-rose-500 to-amber-500 text-slate-950 shadow-md">
+            <i class="fa-solid fa-fire text-base"></i> IGNITE <span class="hidden md:inline">(Competitive)</span>
+          </button>
+          <button onclick="switchWing('virtual-school')" id="tabBtn-virtual-school" class="wing-tab-btn px-5 py-3 rounded-xl text-xs sm:text-sm font-bold text-slate-400 hover:text-white transition flex items-center gap-2">
+            <i class="fa-solid fa-laptop-code text-base text-brand-sky"></i> THE VIRTUAL SCHOOL <span class="hidden md:inline">(Tuition)</span>
+          </button>
+          <button onclick="switchWing('talentium')" id="tabBtn-talentium" class="wing-tab-btn px-5 py-3 rounded-xl text-xs sm:text-sm font-bold text-slate-400 hover:text-white transition flex items-center gap-2">
+            <i class="fa-solid fa-brain text-base text-emerald-400"></i> TALENTIUM <span class="hidden md:inline">(Skills)</span>
+          </button>
+          <button onclick="switchWing('eduforge')" id="tabBtn-eduforge" class="wing-tab-btn px-5 py-3 rounded-xl text-xs sm:text-sm font-bold text-slate-400 hover:text-white transition flex items-center gap-2">
+            <i class="fa-solid fa-chalkboard-user text-base text-violet-400"></i> EDUFORGE <span class="hidden md:inline">(Teacher Training)</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- WING 1: IGNITE (COMPETITIVE EXAM WING) -->
+      <div id="wingContent-ignite" class="wing-content block">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center glass-card rounded-3xl p-6 sm:p-10 border border-rose-500/20 bg-gradient-to-b from-rose-950/20 to-slate-900/60">
+          <div class="lg:col-span-7 space-y-6">
+            <div class="flex items-center gap-3">
+              <span class="w-10 h-10 rounded-xl bg-rose-500/20 border border-rose-500/40 flex items-center justify-center text-rose-400 text-xl font-bold">
+                <i class="fa-solid fa-fire"></i>
+              </span>
+              <div>
+                <span class="text-xs font-bold uppercase tracking-wider text-rose-400">Wing 01 • Competitive Entrance & Scholarship Hub</span>
+                <h3 class="font-display text-2xl sm:text-4xl font-extrabold text-white">IGNITE</h3>
+              </div>
+            </div>
+
+            <p class="text-slate-300 text-base leading-relaxed">
+              <strong>IGNITE</strong> powers students with specialized, high-rigor coaching to crack national, state, and premier university competitive entrance examinations with confidence and high percentile ranks.
+            </p>
+
+            <!-- Programs Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+              <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
+                <div class="font-bold text-white text-sm flex items-center gap-2">
+                  <i class="fa-solid fa-medal text-amber-400"></i> NMMS Scholarship Coaching
+                </div>
+                <p class="text-xs text-slate-400 mt-1">Official partnership with Malappuram Block Panchayat (imbibe project). SAT & MAT syllabus.</p>
+              </div>
+
+              <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
+                <div class="font-bold text-white text-sm flex items-center gap-2">
+                  <i class="fa-solid fa-user-doctor text-emerald-400"></i> NEET & JEE Foundation
+                </div>
+                <p class="text-xs text-slate-400 mt-1">Early conceptual strengthening for Medical & Engineering aspirants from Class 8 upwards.</p>
+              </div>
+
+              <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
+                <div class="font-bold text-white text-sm flex items-center gap-2">
+                  <i class="fa-solid fa-award text-brand-sky"></i> LSS & USS Scholarships
+                </div>
+                <p class="text-xs text-slate-400 mt-1">Focused coaching for Lower & Upper Secondary Scholarship exams conducted by Pareeksha Bhavan.</p>
+              </div>
+
+              <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
+                <div class="font-bold text-white text-sm flex items-center gap-2">
+                  <i class="fa-solid fa-building-columns text-violet-400"></i> CUET & AMU Entrances
+                </div>
+                <p class="text-xs text-slate-400 mt-1">Central University Common Entrance Test (UG/PG), Aligarh Muslim University & Integrated B.Ed/Law.</p>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-3 pt-2">
+              <a href="#mock-test" class="px-5 py-3 rounded-xl bg-rose-500 hover:bg-rose-600 text-white font-bold text-xs uppercase tracking-wider shadow-lg shadow-rose-500/20 transition flex items-center gap-2">
+                <i class="fa-solid fa-clipboard-check"></i> Register for NMMS Mock Test
+              </a>
+              <button onclick="openEnrollWithPrefill('IGNITE: NMMS & Entrances')" class="px-5 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs border border-slate-700 transition">
+                Inquire Entrance Batches
+              </button>
+            </div>
+          </div>
+
+          <!-- Right Column Feature Visual -->
+          <div class="lg:col-span-5">
+            <div class="rounded-2xl overflow-hidden border border-rose-500/30 bg-slate-950 relative shadow-xl">
+              <img src="poster3.jpg" alt="imbibe NMMS Mock Test InLine Poster" class="w-full object-cover">
+              <div class="p-4 bg-slate-900/95 border-t border-slate-800">
+                <div class="flex items-center justify-between text-xs">
+                  <span class="font-bold text-amber-400"><i class="fa-solid fa-calendar"></i> NMMS Mock Series Active</span>
+                  <button onclick="openPosterModal(2)" class="text-brand-sky hover:underline font-bold">Enlarge Poster</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- WING 2: THE VIRTUAL SCHOOL (TUITION & ACADEMIC HUB) -->
+      <div id="wingContent-virtual-school" class="wing-content hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center glass-card rounded-3xl p-6 sm:p-10 border border-brand-sky/20 bg-gradient-to-b from-sky-950/20 to-slate-900/60">
+          <div class="lg:col-span-7 space-y-6">
+            <div class="flex items-center gap-3">
+              <span class="w-10 h-10 rounded-xl bg-brand-sky/20 border border-brand-sky/40 flex items-center justify-center text-brand-sky text-xl font-bold">
+                <i class="fa-solid fa-laptop-code"></i>
+              </span>
+              <div>
+                <span class="text-xs font-bold uppercase tracking-wider text-brand-sky">Wing 02 • Academic Tuition & Mastery</span>
+                <h3 class="font-display text-2xl sm:text-4xl font-extrabold text-white">THE VIRTUAL SCHOOL</h3>
+              </div>
+            </div>
+
+            <p class="text-slate-300 text-base leading-relaxed">
+              <strong>The Virtual School</strong> offers flexible, high-impact tuition for Kerala State Syllabus & CBSE students. Delivered through physical classes in Perinthalmanna and dynamic, live 2-way virtual classrooms.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+              <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
+                <div class="font-bold text-white text-sm flex items-center gap-2">
+                  <i class="fa-solid fa-school-flag text-brand-sky"></i> Classes 5 to 10 (High School)
+                </div>
+                <p class="text-xs text-slate-400 mt-1">Mathematics, Science (Physics/Chemistry/Bio), Social Science, Malayalam & English.</p>
+              </div>
+
+              <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
+                <div class="font-bold text-white text-sm flex items-center gap-2">
+                  <i class="fa-solid fa-graduation-cap text-amber-400"></i> +1 & +2 Higher Secondary
+                </div>
+                <p class="text-xs text-slate-400 mt-1">Specialized streams: Science (Bio/Maths/CS), Commerce & Humanities. State & CBSE.</p>
+              </div>
+
+              <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
+                <div class="font-bold text-white text-sm flex items-center gap-2">
+                  <i class="fa-solid fa-tags text-emerald-400"></i> ₹3,000 / Subject Bridge
+                </div>
+                <p class="text-xs text-slate-400 mt-1">Affordable modular mastery allowing students to enroll in single difficult subjects.</p>
+              </div>
+
+              <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
+                <div class="font-bold text-white text-sm flex items-center gap-2">
+                  <i class="fa-solid fa-video text-rose-400"></i> Recorded Lecture Vault
+                </div>
+                <p class="text-xs text-slate-400 mt-1">Never miss a class: 24/7 access to revision recordings, test solutions & study notes.</p>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-3 pt-2">
+              <a href="#calculator" class="px-5 py-3 rounded-xl bg-brand-sky hover:bg-sky-400 text-slate-950 font-bold text-xs uppercase tracking-wider shadow-lg shadow-sky-500/20 transition flex items-center gap-2">
+                <i class="fa-solid fa-calculator"></i> Calculate My Tuition Fee
+              </a>
+              <button onclick="openEnrollWithPrefill('The Virtual School: +1/+2 or High School')" class="px-5 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs border border-slate-700 transition">
+                Book Free Trial Class
+              </button>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5">
+            <div class="rounded-2xl overflow-hidden border border-brand-sky/30 bg-slate-950 relative shadow-xl">
+              <img src="poster5.jpg" alt="+2 Success Pathway Bridge Poster" class="w-full object-cover">
+              <div class="p-4 bg-slate-900/95 border-t border-slate-800">
+                <div class="flex items-center justify-between text-xs">
+                  <span class="font-bold text-emerald-400"><i class="fa-solid fa-check-circle"></i> ₹3000 / Subject Pathway</span>
+                  <button onclick="openPosterModal(4)" class="text-brand-sky hover:underline font-bold">Enlarge Poster</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- WING 3: TALENTIUM (CAREER & SKILL TRAINING) -->
+      <div id="wingContent-talentium" class="wing-content hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center glass-card rounded-3xl p-6 sm:p-10 border border-emerald-500/20 bg-gradient-to-b from-emerald-950/20 to-slate-900/60">
+          <div class="lg:col-span-7 space-y-6">
+            <div class="flex items-center gap-3">
+              <span class="w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400 text-xl font-bold">
+                <i class="fa-solid fa-brain"></i>
+              </span>
+              <div>
+                <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Wing 03 • Future Skills & Employability</span>
+                <h3 class="font-display text-2xl sm:text-4xl font-extrabold text-white">TALENTIUM</h3>
+              </div>
+            </div>
+
+            <p class="text-slate-300 text-base leading-relaxed">
+              <strong>TALENTIUM</strong> prepares modern school & college graduates to conquer corporate campus recruitment, competitive tests, and next-gen technological workflows.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+              <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
+                <div class="font-bold text-white text-sm flex items-center gap-2">
+                  <i class="fa-solid fa-robot text-emerald-400"></i> AI & Technical Tools for All
+                </div>
+                <p class="text-xs text-slate-400 mt-1">Practical hands-on training with Generative AI tools, digital productivity suites, and modern tech.</p>
+              </div>
+
+              <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
+                <div class="font-bold text-white text-sm flex items-center gap-2">
+                  <i class="fa-solid fa-puzzle-piece text-amber-400"></i> Aptitude Test Mastery
+                </div>
+                <p class="text-xs text-slate-400 mt-1">Quantitative ability, logical reasoning, data interpretation, and shortcut tricks for placement exams.</p>
+              </div>
+
+              <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
+                <div class="font-bold text-white text-sm flex items-center gap-2">
+                  <i class="fa-solid fa-file-invoice text-brand-sky"></i> Professional Resume & LinkedIn
+                </div>
+                <p class="text-xs text-slate-400 mt-1">Crafting ATS-friendly resumes, standout portfolios, and impactful digital presence.</p>
+              </div>
+
+              <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
+                <div class="font-bold text-white text-sm flex items-center gap-2">
+                  <i class="fa-solid fa-comments text-violet-400"></i> GD & Personal Interview Prep
+                </div>
+                <p class="text-xs text-slate-400 mt-1">Mock group discussions, communication etiquette, and one-on-one interview simulations.</p>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-3 pt-2">
+              <button onclick="openEnrollWithPrefill('TALENTIUM: Skill Training & Placement Prep')" class="px-5 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold text-xs uppercase tracking-wider shadow-lg shadow-emerald-500/20 transition flex items-center gap-2">
+                <i class="fa-solid fa-rocket"></i> Join Talentium Bootcamps
+              </button>
+              <a href="https://wa.me/919061211226?text=Hi%20InLine!%20I%20want%20details%20about%20Talentium%20AI%20and%20Aptitude%20courses." target="_blank" class="px-5 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs border border-slate-700 transition">
+                Talk to Skill Mentor
+              </a>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5">
+            <div class="p-6 rounded-2xl bg-slate-900 border border-emerald-500/30 space-y-4">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-lg">
+                  <i class="fa-solid fa-bolt"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-white text-sm">Industry-Aligned Curriculum</h4>
+                  <p class="text-xs text-slate-400">Built in collaboration with XCEED Hub & Corporate Mentors</p>
+                </div>
+              </div>
+              <ul class="space-y-2.5 text-xs text-slate-300">
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Weekend live bootcamps with practical assignments</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Real mock interview feedback from HR specialists</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Certificate of Completion & Placement Assistance</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- WING 4: EDUFORGE (TEACHER TRAINING & PEDAGOGY) -->
+      <div id="wingContent-eduforge" class="wing-content hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center glass-card rounded-3xl p-6 sm:p-10 border border-violet-500/20 bg-gradient-to-b from-purple-950/20 to-slate-900/60">
+          <div class="lg:col-span-7 space-y-6">
+            <div class="flex items-center gap-3">
+              <span class="w-10 h-10 rounded-xl bg-violet-500/20 border border-violet-500/40 flex items-center justify-center text-violet-400 text-xl font-bold">
+                <i class="fa-solid fa-chalkboard-user"></i>
+              </span>
+              <div>
+                <span class="text-xs font-bold uppercase tracking-wider text-violet-400">Wing 04 • Professional Educator Development</span>
+                <h3 class="font-display text-2xl sm:text-4xl font-extrabold text-white">EDUFORGE</h3>
+              </div>
+            </div>
+
+            <p class="text-slate-300 text-base leading-relaxed">
+              <strong>EDUFORGE</strong> shapes visionary educators equipped with modern pedagogical mastery, digital classroom tools, and child-centric teaching psychology.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+              <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
+                <div class="font-bold text-white text-sm flex items-center gap-2">
+                  <i class="fa-solid fa-shapes text-violet-400"></i> FTTP (Foundation & KG Teacher Training)
+                </div>
+                <p class="text-xs text-slate-400 mt-1">Holistic programme covering Montessori principles, early phonics, sensory learning, and child psychology.</p>
+              </div>
+
+              <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
+                <div class="font-bold text-white text-sm flex items-center gap-2">
+                  <i class="fa-solid fa-person-chalkboard text-brand-sky"></i> "Tomorrow's Teacher" Internship
+                </div>
+                <p class="text-xs text-slate-400 mt-1">Live hands-on internship in partner schools across Malappuram & Kerala with real lesson evaluations.</p>
+              </div>
+
+              <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
+                <div class="font-bold text-white text-sm flex items-center gap-2">
+                  <i class="fa-solid fa-display text-amber-400"></i> Smart Classroom & EdTech Tools
+                </div>
+                <p class="text-xs text-slate-400 mt-1">Mastering interactive flat panels, gamified quizzes, learning management systems, and hybrid setups.</p>
+              </div>
+
+              <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
+                <div class="font-bold text-white text-sm flex items-center gap-2">
+                  <i class="fa-solid fa-certificate text-emerald-400"></i> Recognized Certification
+                </div>
+                <p class="text-xs text-slate-400 mt-1">Authorized certificates backed by InLine, opening doors to top private schools & international kindergartens.</p>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-3 pt-2">
+              <button onclick="openEnrollWithPrefill('EDUFORGE: Teacher Training (FTTP)')" class="px-5 py-3 rounded-xl bg-violet-600 hover:bg-violet-500 text-white font-bold text-xs uppercase tracking-wider shadow-lg shadow-violet-500/20 transition flex items-center gap-2">
+                <i class="fa-solid fa-graduation-cap"></i> Apply for FTTP Batch
+              </button>
+              <a href="tel:+918086910451" class="px-5 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs border border-slate-700 transition flex items-center gap-2">
+                <i class="fa-solid fa-phone text-emerald-400"></i> Call: 8086910451
+              </a>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5">
+            <div class="p-6 rounded-2xl bg-slate-900 border border-violet-500/30 space-y-4">
+              <div class="text-xs uppercase tracking-wider font-bold text-violet-400">Educator Trainee Highlights</div>
+              <div class="space-y-3">
+                <div class="p-3 rounded-xl bg-slate-950 border border-slate-800 flex items-start gap-3">
+                  <span class="text-amber-400 text-lg mt-0.5"><i class="fa-solid fa-award"></i></span>
+                  <div>
+                    <h4 class="font-bold text-white text-xs">100% Placement Assistance</h4>
+                    <p class="text-[11px] text-slate-400 mt-0.5">Direct referral network across CBSE, ICSE & state-affiliated pre-primary schools.</p>
+                  </div>
+                </div>
+                <div class="p-3 rounded-xl bg-slate-950 border border-slate-800 flex items-start gap-3">
+                  <span class="text-brand-sky text-lg mt-0.5"><i class="fa-solid fa-clock"></i></span>
+                  <div>
+                    <h4 class="font-bold text-white text-xs">Flexible Weekend & Regular Batches</h4>
+                    <p class="text-[11px] text-slate-400 mt-0.5">Designed for aspiring teachers, mothers returning to work, and education graduates.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FEATURED CAMPAIGNS & POSTERS GALLERY (WITH INTERACTIVE LIGHTBOX) -->
+  <section id="gallery" class="py-20 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-sky/10 text-brand-sky border border-brand-sky/20 text-xs font-bold uppercase tracking-wider mb-2">
+            Visual Media & Campaign Noticeboard
+          </div>
+          <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-white">
+            Current Programs & Official Announcements
+          </h2>
+          <p class="text-slate-400 text-sm sm:text-base mt-2 max-w-xl">
+            Explore authentic posters detailing our tuition batches, mock test schedules, and campus life at Perinthalmanna.
+          </p>
+        </div>
+
+        <!-- Filter Tags -->
+        <div class="flex flex-wrap items-center gap-2 text-xs font-bold">
+          <button onclick="filterPosters('all')" id="flt-all" class="poster-flt-btn px-3.5 py-2 rounded-xl bg-brand-sky text-slate-950 transition">All (5)</button>
+          <button onclick="filterPosters('plus2')" id="flt-plus2" class="poster-flt-btn px-3.5 py-2 rounded-xl bg-slate-800 text-slate-300 hover:text-white transition">+2 Tuition</button>
+          <button onclick="filterPosters('classes510')" id="flt-classes510" class="poster-flt-btn px-3.5 py-2 rounded-xl bg-slate-800 text-slate-300 hover:text-white transition">Classes 5-10</button>
+          <button onclick="filterPosters('nmms')" id="flt-nmms" class="poster-flt-btn px-3.5 py-2 rounded-xl bg-slate-800 text-slate-300 hover:text-white transition">NMMS Panchayat</button>
+        </div>
+      </div>
+
+      <!-- Poster Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="posterGridContainer">
+        
+        <!-- Poster 1: +2 Tuition -->
+        <div class="poster-item plus2 group relative rounded-2xl overflow-hidden glass-card border border-slate-800 hover:border-brand-sky/50 transition duration-300">
+          <div class="aspect-[3/4] bg-slate-950 overflow-hidden relative">
+            <img src="poster1.jpg" alt="+2 Tuition CBSE State Syllabus" class="w-full h-full object-contain p-2 group-hover:scale-105 transition duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60"></div>
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[10px] font-extrabold uppercase bg-rose-500 text-white shadow">
+              +2 Board Special
+            </span>
+          </div>
+          <div class="p-4 bg-slate-900/90 border-t border-slate-800/80">
+            <h3 class="font-bold text-white text-sm line-clamp-1">+2 Tuition: CBSE & State Syllabus</h3>
+            <p class="text-xs text-slate-400 mt-1 line-clamp-1">Dream of +2 Victory • Comprehensive Mentorship</p>
+            <div class="mt-3 flex items-center justify-between text-xs pt-2 border-t border-slate-800">
+              <span class="text-brand-sky font-semibold"><i class="fa-solid fa-phone mr-1"></i> 9061211227</span>
+              <button onclick="openPosterModal(0)" class="text-slate-300 hover:text-white font-bold flex items-center gap-1">
+                View Full <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Poster 2: Classes 5 to 10 -->
+        <div class="poster-item classes510 group relative rounded-2xl overflow-hidden glass-card border border-slate-800 hover:border-brand-sky/50 transition duration-300">
+          <div class="aspect-[3/4] bg-slate-950 overflow-hidden relative">
+            <img src="poster2.jpg" alt="Classes 5 to 10 InLine" class="w-full h-full object-contain p-2 group-hover:scale-105 transition duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60"></div>
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[10px] font-extrabold uppercase bg-amber-400 text-slate-950 shadow">
+              High School
+            </span>
+          </div>
+          <div class="p-4 bg-slate-900/90 border-t border-slate-800/80">
+            <h3 class="font-bold text-white text-sm line-clamp-1">Classes 5 – 10: Academic Excellence</h3>
+            <p class="text-xs text-slate-400 mt-1 line-clamp-1">Maths, Science, Social, Malayalam & English</p>
+            <div class="mt-3 flex items-center justify-between text-xs pt-2 border-t border-slate-800">
+              <span class="text-brand-sky font-semibold"><i class="fa-solid fa-phone mr-1"></i> 9061211227</span>
+              <button onclick="openPosterModal(1)" class="text-slate-300 hover:text-white font-bold flex items-center gap-1">
+                View Full <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Poster 3: imbibe NMMS Mock Test Schedule -->
+        <div class="poster-item nmms group relative rounded-2xl overflow-hidden glass-card border border-slate-800 hover:border-brand-sky/50 transition duration-300">
+          <div class="aspect-[3/4] bg-slate-950 overflow-hidden relative">
+            <img src="poster3.jpg" alt="imbibe NMMS Coaching Mock Test Timings" class="w-full h-full object-contain p-2 group-hover:scale-105 transition duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60"></div>
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[10px] font-extrabold uppercase bg-emerald-500 text-slate-950 shadow">
+              NMMS Schedule
+            </span>
+          </div>
+          <div class="p-4 bg-slate-900/90 border-t border-slate-800/80">
+            <h3 class="font-bold text-white text-sm line-clamp-1">imbibe 26-27 NMMS Mock Test</h3>
+            <p class="text-xs text-slate-400 mt-1 line-clamp-1">Malappuram Block Panchayat • SAT & MAT Exam Details</p>
+            <div class="mt-3 flex items-center justify-between text-xs pt-2 border-t border-slate-800">
+              <span class="text-emerald-400 font-semibold"><i class="fa-solid fa-clock mr-1"></i> 25/10/2026 Timetable</span>
+              <button onclick="openPosterModal(2)" class="text-slate-300 hover:text-white font-bold flex items-center gap-1">
+                View Full <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Poster 4: VidhyaLine InLine Classroom Test Center -->
+        <div class="poster-item nmms group relative rounded-2xl overflow-hidden glass-card border border-slate-800 hover:border-brand-sky/50 transition duration-300">
+          <div class="aspect-[3/4] bg-slate-950 overflow-hidden relative">
+            <img src="poster4.jpg" alt="VidhyaLine InLine NMMS Test Photos" class="w-full h-full object-contain p-2 group-hover:scale-105 transition duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60"></div>
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[10px] font-extrabold uppercase bg-indigo-500 text-white shadow">
+              Real Exam Center
+            </span>
+          </div>
+          <div class="p-4 bg-slate-900/90 border-t border-slate-800/80">
+            <h3 class="font-bold text-white text-sm line-clamp-1">NMMS 2026 Mock Center & Faculty</h3>
+            <p class="text-xs text-slate-400 mt-1 line-clamp-1">Classroom photographs & student test participation</p>
+            <div class="mt-3 flex items-center justify-between text-xs pt-2 border-t border-slate-800">
+              <span class="text-slate-300 font-semibold"><i class="fa-solid fa-camera mr-1"></i> VidhyaLine Center</span>
+              <button onclick="openPosterModal(3)" class="text-slate-300 hover:text-white font-bold flex items-center gap-1">
+                View Full <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Poster 5: +2 ₹3000 Subject Bridge -->
+        <div class="poster-item plus2 group relative rounded-2xl overflow-hidden glass-card border border-slate-800 hover:border-brand-sky/50 transition duration-300">
+          <div class="aspect-[3/4] bg-slate-950 overflow-hidden relative">
+            <img src="poster5.jpg" alt="+2 Success Pathway Bridge 3000 per subject" class="w-full h-full object-contain p-2 group-hover:scale-105 transition duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60"></div>
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[10px] font-extrabold uppercase bg-emerald-400 text-slate-950 shadow">
+              ₹3,000 / Subject
+            </span>
+          </div>
+          <div class="p-4 bg-slate-900/90 border-t border-slate-800/80">
+            <h3 class="font-bold text-white text-sm line-clamp-1">+2 Success Pathway Bridge</h3>
+            <p class="text-xs text-slate-400 mt-1 line-clamp-1">Subject Mastery Programme • Contact: 9061211227</p>
+            <div class="mt-3 flex items-center justify-between text-xs pt-2 border-t border-slate-800">
+              <span class="text-amber-400 font-semibold"><i class="fa-solid fa-bolt mr-1"></i> Best Value</span>
+              <button onclick="openPosterModal(4)" class="text-slate-300 hover:text-white font-bold flex items-center gap-1">
+                View Full <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- INTERACTIVE TUITION & COURSE FEE CALCULATOR -->
+  <section id="calculator" class="py-20 bg-slate-950/70 border-y border-slate-800 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/10 text-amber-300 border border-amber-400/20 text-xs font-bold uppercase tracking-wider mb-2">
+          Transparent & Accessible Pricing
+        </span>
+        <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-white">
+          InLine Tuition & Program Fee Calculator
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base mt-2">
+          Customize your academic plan. As highlighted in our <span class="text-white font-semibold">+2 Success Pathway</span>, subject mastery starts at just <span class="text-emerald-400 font-bold">₹3,000 per subject</span>.
+        </p>
+      </div>
+
+      <!-- Calculator Box -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 glass-card rounded-3xl p-6 sm:p-10 border border-slate-800">
+        
+        <!-- Controls Column -->
+        <div class="lg:col-span-7 space-y-6">
+          
+          <!-- Step 1: Select Grade / Target Level -->
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">
+              1. Choose Grade or Program
+            </label>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
+              <button type="button" onclick="setCalcLevel('plus2_science', 3000)" class="calc-level-btn p-3 rounded-xl border border-brand-sky bg-brand-sky/15 text-white font-bold text-xs text-left transition" id="lvl-plus2_science">
+                +1 / +2 Science
+                <span class="block text-[10px] text-brand-sky font-normal mt-0.5">₹3,000 / subject</span>
+              </button>
+
+              <button type="button" onclick="setCalcLevel('plus2_commerce', 2800)" class="calc-level-btn p-3 rounded-xl border border-slate-800 bg-slate-900 text-slate-300 font-bold text-xs text-left hover:border-slate-700 transition" id="lvl-plus2_commerce">
+                +1 / +2 Commerce
+                <span class="block text-[10px] text-slate-400 font-normal mt-0.5">₹2,800 / subject</span>
+              </button>
+
+              <button type="button" onclick="setCalcLevel('highschool', 1800)" class="calc-level-btn p-3 rounded-xl border border-slate-800 bg-slate-900 text-slate-300 font-bold text-xs text-left hover:border-slate-700 transition" id="lvl-highschool">
+                Classes 8 – 10
+                <span class="block text-[10px] text-slate-400 font-normal mt-0.5">₹1,800 / subject</span>
+              </button>
+
+              <button type="button" onclick="setCalcLevel('upperprimary', 1500)" class="calc-level-btn p-3 rounded-xl border border-slate-800 bg-slate-900 text-slate-300 font-bold text-xs text-left hover:border-slate-700 transition" id="lvl-upperprimary">
+                Classes 5 – 7
+                <span class="block text-[10px] text-slate-400 font-normal mt-0.5">₹1,500 / subject</span>
+              </button>
+
+              <button type="button" onclick="setCalcLevel('nmms', 2500)" class="calc-level-btn p-3 rounded-xl border border-slate-800 bg-slate-900 text-slate-300 font-bold text-xs text-left hover:border-slate-700 transition" id="lvl-nmms">
+                NMMS Intensive
+                <span class="block text-[10px] text-slate-400 font-normal mt-0.5">Special Scholarship</span>
+              </button>
+
+              <button type="button" onclick="setCalcLevel('eduforge', 4500)" class="calc-level-btn p-3 rounded-xl border border-slate-800 bg-slate-900 text-slate-300 font-bold text-xs text-left hover:border-slate-700 transition" id="lvl-eduforge">
+                EduForge (FTTP)
+                <span class="block text-[10px] text-slate-400 font-normal mt-0.5">Teacher Training</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 2: Syllabus & Mode -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">
+                2. Syllabus / Board
+              </label>
+              <select id="calcSyllabus" onchange="updateCalc()" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3 py-2.5 text-xs text-white focus:outline-none focus:border-brand-sky">
+                <option value="Kerala State Syllabus">Kerala State Syllabus (SCERT)</option>
+                <option value="CBSE Board">CBSE Board Syllabus</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">
+                3. Learning Mode
+              </label>
+              <select id="calcMode" onchange="updateCalc()" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3 py-2.5 text-xs text-white focus:outline-none focus:border-brand-sky">
+                <option value="Perinthalmanna Hybrid (Classroom + Virtual)">Perinthalmanna Classroom + Hybrid</option>
+                <option value="100% Online Live Virtual School">100% Online Live (The Virtual School)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Step 3: Choose Subjects -->
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <label class="block text-xs font-bold uppercase tracking-wider text-slate-300">
+                4. Select Subject Modules
+              </label>
+              <span class="text-[11px] text-amber-400 font-semibold" id="calcDiscountHint">Select 3 or more for combo discount!</span>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-2" id="calcSubjectsContainer">
+              <!-- Dynamically populated or default options -->
+              <label class="calc-chip flex items-center gap-2 p-2.5 rounded-xl bg-slate-900 border border-slate-800 cursor-pointer hover:border-slate-700 text-xs">
+                <input type="checkbox" value="Physics" checked onchange="updateCalc()" class="rounded text-brand-sky bg-slate-800 border-slate-700">
+                <span class="text-slate-200">Physics</span>
+              </label>
+              <label class="calc-chip flex items-center gap-2 p-2.5 rounded-xl bg-slate-900 border border-slate-800 cursor-pointer hover:border-slate-700 text-xs">
+                <input type="checkbox" value="Chemistry" checked onchange="updateCalc()" class="rounded text-brand-sky bg-slate-800 border-slate-700">
+                <span class="text-slate-200">Chemistry</span>
+              </label>
+              <label class="calc-chip flex items-center gap-2 p-2.5 rounded-xl bg-slate-900 border border-slate-800 cursor-pointer hover:border-slate-700 text-xs">
+                <input type="checkbox" value="Mathematics" checked onchange="updateCalc()" class="rounded text-brand-sky bg-slate-800 border-slate-700">
+                <span class="text-slate-200">Mathematics</span>
+              </label>
+              <label class="calc-chip flex items-center gap-2 p-2.5 rounded-xl bg-slate-900 border border-slate-800 cursor-pointer hover:border-slate-700 text-xs">
+                <input type="checkbox" value="Biology" onchange="updateCalc()" class="rounded text-brand-sky bg-slate-800 border-slate-700">
+                <span class="text-slate-200">Biology</span>
+              </label>
+              <label class="calc-chip flex items-center gap-2 p-2.5 rounded-xl bg-slate-900 border border-slate-800 cursor-pointer hover:border-slate-700 text-xs">
+                <input type="checkbox" value="English" onchange="updateCalc()" class="rounded text-brand-sky bg-slate-800 border-slate-700">
+                <span class="text-slate-200">English</span>
+              </label>
+              <label class="calc-chip flex items-center gap-2 p-2.5 rounded-xl bg-slate-900 border border-slate-800 cursor-pointer hover:border-slate-700 text-xs">
+                <input type="checkbox" value="Malayalam" onchange="updateCalc()" class="rounded text-brand-sky bg-slate-800 border-slate-700">
+                <span class="text-slate-200">Malayalam</span>
+              </label>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Result Estimate Column -->
+        <div class="lg:col-span-5 flex flex-col justify-between p-6 rounded-2xl bg-gradient-to-br from-slate-900 to-slate-950 border border-slate-800">
+          <div>
+            <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+              <span class="text-xs uppercase font-extrabold tracking-wider text-slate-400">Plan Summary</span>
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20" id="calcPlanBadge">
+                +1 / +2 Science
+              </span>
+            </div>
+
+            <div class="space-y-3 py-4 text-xs">
+              <div class="flex justify-between text-slate-300">
+                <span>Selected Subjects:</span>
+                <span class="font-bold text-white text-right" id="calcSummarySubjects">3 Subjects</span>
+              </div>
+              <div class="flex justify-between text-slate-300">
+                <span>Base Rate / Subject:</span>
+                <span class="font-semibold text-slate-200" id="calcBaseRate">₹3,000</span>
+              </div>
+              <div class="flex justify-between text-slate-300">
+                <span>Mode:</span>
+                <span class="font-semibold text-brand-sky" id="calcSummaryMode">Perinthalmanna Hybrid</span>
+              </div>
+              <div class="flex justify-between text-emerald-400">
+                <span>Combo Advantage:</span>
+                <span class="font-bold" id="calcDiscountAmount">- ₹1,000</span>
+              </div>
+            </div>
+
+            <div class="mt-2 p-4 rounded-xl bg-slate-950 border border-slate-800 text-center">
+              <div class="text-xs text-slate-400 font-medium uppercase tracking-wider">Estimated Tuition Investment</div>
+              <div class="font-display text-4xl font-extrabold text-white mt-1 text-gold-gradient" id="calcTotalDisplay">
+                ₹8,000
+              </div>
+              <div class="text-[11px] text-slate-400 mt-1">
+                *Subject to installment options & Panchayat concession criteria
+              </div>
+            </div>
+
+            <!-- Features included in estimate -->
+            <div class="mt-4 space-y-1.5 text-[11px] text-slate-400">
+              <div class="flex items-center gap-1.5"><i class="fa-solid fa-check text-emerald-400"></i> Full syllabus coverage + Chapter-wise question bank</div>
+              <div class="flex items-center gap-1.5"><i class="fa-solid fa-check text-emerald-400"></i> Weekly OMR evaluation & Parent progress updates</div>
+              <div class="flex items-center gap-1.5"><i class="fa-solid fa-check text-emerald-400"></i> Free access to Recorded revision portal 24/7</div>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-slate-800 space-y-2">
+            <button onclick="dispatchWhatsAppCalc()" class="w-full py-3.5 rounded-xl font-bold bg-emerald-500 hover:bg-emerald-600 text-slate-950 text-xs uppercase tracking-wider shadow-lg shadow-emerald-500/20 transition flex items-center justify-center gap-2">
+              <i class="fa-brands fa-whatsapp text-sm"></i> Enroll in this Plan via WhatsApp
+            </button>
+            <button onclick="openModal('enrollmentModal')" class="w-full py-2.5 rounded-xl font-bold bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs transition">
+              Or Fill Application Form
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- NMMS MOCK TEST & SCHOLARSHIP HUB (FEATURED IN POSTER 3 & 4) -->
+  <section id="mock-test" class="py-20 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        
+        <!-- Left: Official Schedule from Poster 3 -->
+        <div class="lg:col-span-6 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs font-bold uppercase tracking-wider">
+            Malappuram Block Panchayat & InLine Initiative
+          </div>
+          
+          <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-white leading-tight">
+            imbibe 2026-27 NMMS Coaching & State-Level Mock Test Series
+          </h2>
+
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            As highlighted in our official project rollout with the <strong>Malappuram Block Panchayat</strong>, InLine & VidhyaLine conduct high-fidelity mock entrance simulations modeled precisely after the Pareeksha Bhavan NMMS examinations.
+          </p>
+
+          <!-- Examination Schedule Timetable (from Poster 3) -->
+          <div class="rounded-2xl bg-slate-900 border border-slate-800 overflow-hidden shadow-xl">
+            <div class="p-3.5 bg-slate-800/80 border-b border-slate-700 flex items-center justify-between">
+              <div class="font-bold text-xs uppercase tracking-wider text-amber-400 flex items-center gap-2">
+                <i class="fa-solid fa-clock"></i> Official Mock Examination Schedule
+              </div>
+              <span class="text-[11px] font-semibold text-slate-300">Class 8 Scholarship</span>
+            </div>
+
+            <div class="divide-y divide-slate-800 text-xs">
+              <div class="p-4 flex items-center justify-between">
+                <div>
+                  <span class="font-bold text-white text-sm">Paper 1: SAT (Scholastic Aptitude Test)</span>
+                  <div class="text-slate-400 text-[11px] mt-0.5">Science, Mathematics & Social Science (90 Marks)</div>
+                </div>
+                <div class="text-right">
+                  <span class="inline-block px-2.5 py-1 rounded-md bg-brand-sky/15 text-brand-sky font-bold text-xs">
+                    10:00 AM – 11:30 AM
+                  </span>
+                </div>
+              </div>
+
+              <div class="p-4 flex items-center justify-between">
+                <div>
+                  <span class="font-bold text-white text-sm">Paper 2: MAT (Mental Ability Test)</span>
+                  <div class="text-slate-400 text-[11px] mt-0.5">Reasoning, Patterns, Analogies & Logic (90 Marks)</div>
+                </div>
+                <div class="text-right">
+                  <span class="inline-block px-2.5 py-1 rounded-md bg-rose-500/15 text-rose-400 font-bold text-xs">
+                    01:00 PM – 02:30 PM
+                  </span>
+                </div>
+              </div>
+
+              <div class="p-3.5 bg-slate-950/60 flex items-center justify-between text-[11px] text-slate-400">
+                <span><i class="fa-solid fa-location-dot text-rose-400 mr-1"></i> Exam Venues: VidhyaLine Perinthalmanna & Online Portal</span>
+                <span class="text-emerald-400 font-bold">OMR Sheet Provided</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-4 text-xs text-slate-300">
+            <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-emerald-400"></i> Detailed Rank Analysis</span>
+            <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-emerald-400"></i> Video Discussion of Answers</span>
+          </div>
+        </div>
+
+        <!-- Right: Instant Mock Registration Form with Digital Hall Ticket Voucher Generation -->
+        <div class="lg:col-span-6">
+          <div class="p-6 sm:p-8 rounded-3xl glass-card border border-emerald-500/30 relative shadow-2xl">
+            <div class="absolute -top-3 right-6 px-3 py-1 rounded-full bg-emerald-500 text-slate-950 text-[10px] font-extrabold uppercase tracking-wider">
+              Free Mock Seat Reservation
+            </div>
+
+            <h3 class="font-display text-xl font-bold text-white">Register for Next NMMS / Scholarship Mock</h3>
+            <p class="text-xs text-slate-400 mt-1 mb-5">Generate your Instant Digital Registration ID & admit confirmation.</p>
+
+            <form id="mockTestForm" onsubmit="handleMockSubmit(event)" class="space-y-3.5">
+              <div>
+                <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-300 mb-1">Student Full Name *</label>
+                <input type="text" id="mockName" required placeholder="e.g. Mohammed Farhan / Ananya Krishna" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-brand-sky">
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div>
+                  <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-300 mb-1">School Name *</label>
+                  <input type="text" id="mockSchool" required placeholder="e.g. GHSS / Unity / Darul Falah" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-brand-sky">
+                </div>
+                <div>
+                  <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-300 mb-1">Panchayat / Town *</label>
+                  <input type="text" id="mockPanchayat" required placeholder="e.g. Perinthalmanna / Malappuram" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-brand-sky">
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div>
+                  <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-300 mb-1">WhatsApp Mobile *</label>
+                  <input type="tel" id="mockPhone" required placeholder="e.g. 9061211227" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-brand-sky">
+                </div>
+                <div>
+                  <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-300 mb-1">Target Mock *</label>
+                  <select id="mockTarget" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-brand-sky">
+                    <option value="NMMS State Mock (SAT + MAT)">NMMS State Mock (Class 8)</option>
+                    <option value="USS Scholarship Mock (Class 7)">USS Scholarship Mock (Class 7)</option>
+                    <option value="LSS Scholarship Mock (Class 4/5)">LSS Scholarship Mock (Class 4/5)</option>
+                    <option value="+2 Model Exam (Science)">+2 Model Exam (Science)</option>
+                  </select>
+                </div>
+              </div>
+
+              <button type="submit" class="w-full py-3.5 rounded-xl font-bold bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-slate-950 text-xs uppercase tracking-wider shadow-lg shadow-emerald-500/20 transition flex items-center justify-center gap-2 mt-4">
+                <i class="fa-solid fa-id-card"></i> Confirm Registration & Generate Admit Token
+              </button>
+            </form>
+
+            <!-- Registration Confirmation Box (Revealed on Submit) -->
+            <div id="mockSuccessBox" class="hidden mt-4 p-4 rounded-2xl bg-slate-950 border border-emerald-500 text-center animate-fadeIn">
+              <div class="w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto mb-2 text-lg">
+                <i class="fa-solid fa-circle-check"></i>
+              </div>
+              <h4 class="font-bold text-white text-sm">Mock Test Seat Reserved!</h4>
+              <p class="text-xs text-slate-400 mt-0.5">Your Admit Token ID:</p>
+              <div class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 font-mono font-bold text-sm rounded-lg mt-1 border border-emerald-500/30" id="mockTokenDisplay">
+                INL-NMMS-7821
+              </div>
+              <div class="mt-3 flex items-center justify-center gap-2">
+                <button onclick="confirmOnWhatsAppMock()" class="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs flex items-center gap-1.5">
+                  <i class="fa-brands fa-whatsapp"></i> Send to InLine WhatsApp
+                </button>
+                <button onclick="window.print()" class="px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold text-xs flex items-center gap-1.5">
+                  <i class="fa-solid fa-print"></i> Print
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CAMPUS LIFE & VIDEO REELS SHOWCASE (video1.mp4, video2.mp4, video3.mp4) -->
+  <section id="campus-life" class="py-20 bg-slate-950/80 border-t border-slate-800 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/10 text-rose-400 border border-rose-500/20 text-xs font-bold uppercase tracking-wider mb-2">
+            Student Life & Atmosphere
+          </div>
+          <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-white">
+            Life @ InLine: Vibrant, Engaging & Inspiring
+          </h2>
+          <p class="text-slate-400 text-sm sm:text-base mt-2 max-w-xl">
+            Watch real campus moments, Onam festivals, peer camaraderie, and joyful learning at our Perinthalmanna learning hub.
+          </p>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <span class="text-xs text-slate-400"><i class="fa-solid fa-video text-brand-sky mr-1"></i> 3 Campus Reels Available</span>
+        </div>
+      </div>
+
+      <!-- Video Grid with 3 Real Videos -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Video 1: Celebrations & Onam Festivities -->
+        <div class="rounded-3xl glass-card border border-slate-800 overflow-hidden flex flex-col justify-between group hover:border-slate-700 transition">
+          <div class="relative bg-slate-950 aspect-[9/16] max-h-[480px] overflow-hidden rounded-t-3xl">
+            <video id="vidPlayer1" controls playsinline preload="metadata" class="w-full h-full object-cover">
+              <source src="video1.mp4" type="video/mp4">
+              Your browser does not support HTML5 video.
+            </video>
+            <div class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[10px] font-extrabold uppercase bg-rose-600 text-white shadow pointer-events-none">
+              Campus Fest & Onam
+            </div>
+          </div>
+          <div class="p-5 bg-slate-900/90">
+            <h3 class="font-bold text-white text-sm">Festive Vibes & Student Community</h3>
+            <p class="text-xs text-slate-400 mt-1">Cultural celebrations, joyful teamwork, and student community life at InLine.</p>
+            <div class="mt-3 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+              <span><i class="fa-solid fa-music text-amber-400 mr-1"></i> Onam 2026 Fest</span>
+              <button onclick="playTargetVideo('vidPlayer1')" class="text-brand-sky hover:underline font-bold">
+                Play Clip <i class="fa-solid fa-play text-[10px]"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Video 2: Interactive Classrooms & Peer Learning -->
+        <div class="rounded-3xl glass-card border border-slate-800 overflow-hidden flex flex-col justify-between group hover:border-slate-700 transition">
+          <div class="relative bg-slate-950 aspect-[9/16] max-h-[480px] overflow-hidden rounded-t-3xl">
+            <video id="vidPlayer2" controls playsinline preload="metadata" class="w-full h-full object-cover">
+              <source src="video2.mp4" type="video/mp4">
+              Your browser does not support HTML5 video.
+            </video>
+            <div class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[10px] font-extrabold uppercase bg-brand-sky text-slate-950 shadow pointer-events-none">
+              Interactive Classes
+            </div>
+          </div>
+          <div class="p-5 bg-slate-900/90">
+            <h3 class="font-bold text-white text-sm">Classroom Dynamics & Mentor Sessions</h3>
+            <p class="text-xs text-slate-400 mt-1">High-focus tutoring, conceptual drills, and teacher-student interactive problem-solving.</p>
+            <div class="mt-3 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+              <span><i class="fa-solid fa-chalkboard text-emerald-400 mr-1"></i> Perinthalmanna Hub</span>
+              <button onclick="playTargetVideo('vidPlayer2')" class="text-brand-sky hover:underline font-bold">
+                Play Clip <i class="fa-solid fa-play text-[10px]"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Video 3: Motivational Assemblies & Student Triumphs -->
+        <div class="rounded-3xl glass-card border border-slate-800 overflow-hidden flex flex-col justify-between group hover:border-slate-700 transition">
+          <div class="relative bg-slate-950 aspect-[9/16] max-h-[480px] overflow-hidden rounded-t-3xl">
+            <video id="vidPlayer3" controls playsinline preload="metadata" class="w-full h-full object-cover">
+              <source src="video3.mp4" type="video/mp4">
+              Your browser does not support HTML5 video.
+            </video>
+            <div class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[10px] font-extrabold uppercase bg-emerald-500 text-slate-950 shadow pointer-events-none">
+              Student Recognition
+            </div>
+          </div>
+          <div class="p-5 bg-slate-900/90">
+            <h3 class="font-bold text-white text-sm">Empowerment & Motivation</h3>
+            <p class="text-xs text-slate-400 mt-1">Inspiring assemblies, academic encouragement, and scholarship victory ceremonies.</p>
+            <div class="mt-3 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+              <span><i class="fa-solid fa-trophy text-amber-400 mr-1"></i> Success Stories</span>
+              <button onclick="playTargetVideo('vidPlayer3')" class="text-brand-sky hover:underline font-bold">
+                Play Clip <i class="fa-solid fa-play text-[10px]"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE INLINE (PILLARS OF EXCELLENCE) -->
+  <section class="py-20 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 text-xs font-bold uppercase tracking-wider mb-2">
+          The InLine Distinction
+        </span>
+        <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-white">
+          Why Kerala Parents & Students Trust InLine
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <div class="p-6 rounded-2xl glass-card border border-slate-800 hover:border-slate-700 transition">
+          <div class="w-12 h-12 rounded-xl bg-brand-sky/15 text-brand-sky flex items-center justify-center text-xl mb-4">
+            <i class="fa-solid fa-users-rectangle"></i>
+          </div>
+          <h3 class="font-bold text-white text-base">Micro-Batch Personal Attention</h3>
+          <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+            Unlike overcrowded factories, our batches are intentionally compact to ensure every single child gets personal doubt-solving and individual attention.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl glass-card border border-slate-800 hover:border-slate-700 transition">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center text-xl mb-4">
+            <i class="fa-solid fa-language"></i>
+          </div>
+          <h3 class="font-bold text-white text-base">Bilingual Pedagogy (Malayalam + English)</h3>
+          <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+            Complex Physics formulas and Maths proofs are explained in clear Malayalam and English, unlocking total conceptual understanding.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl glass-card border border-slate-800 hover:border-slate-700 transition">
+          <div class="w-12 h-12 rounded-xl bg-amber-500/15 text-amber-400 flex items-center justify-center text-xl mb-4">
+            <i class="fa-solid fa-chart-line"></i>
+          </div>
+          <h3 class="font-bold text-white text-base">Regular OMR & Parent Analytics</h3>
+          <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+            Weekly evaluation with OMR answer sheets and prompt digital reports dispatched to parents to monitor continuous improvement.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl glass-card border border-slate-800 hover:border-slate-700 transition">
+          <div class="w-12 h-12 rounded-xl bg-purple-500/15 text-purple-400 flex items-center justify-center text-xl mb-4">
+            <i class="fa-solid fa-chalkboard-user"></i>
+          </div>
+          <h3 class="font-bold text-white text-base">Experienced Master Mentors</h3>
+          <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+            Passionate teachers with proven track records in state board evaluations, scholarship mentoring, and university entrance prep.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl glass-card border border-slate-800 hover:border-slate-700 transition">
+          <div class="w-12 h-12 rounded-xl bg-rose-500/15 text-rose-400 flex items-center justify-center text-xl mb-4">
+            <i class="fa-solid fa-cloud-arrow-down"></i>
+          </div>
+          <h3 class="font-bold text-white text-base">24/7 Digital Library & Revision Notes</h3>
+          <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+            Recorded live sessions, handwritten formula summaries, and previous 10-year question papers available at any hour on our portal.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl glass-card border border-slate-800 hover:border-slate-700 transition">
+          <div class="w-12 h-12 rounded-xl bg-teal-500/15 text-teal-400 flex items-center justify-center text-xl mb-4">
+            <i class="fa-solid fa-hand-holding-dollar"></i>
+          </div>
+          <h3 class="font-bold text-white text-base">Democratized & Transparent Fees</h3>
+          <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+            High-caliber coaching made affordable for all families. Modular enrollment starting at ₹3,000/subject and panchayat project concessions.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ ACCORDION -->
+  <section class="py-16 bg-slate-950/60 border-t border-slate-800">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-10">
+        <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-white">Frequently Asked Questions</h2>
+        <p class="text-xs sm:text-sm text-slate-400 mt-1">Everything you need to know about InLine admissions, classes, and schedules.</p>
+      </div>
+
+      <div class="space-y-3">
+        
+        <!-- FAQ 1 -->
+        <div class="faq-card rounded-2xl bg-slate-900/80 border border-slate-800 overflow-hidden">
+          <button onclick="toggleFaq(this)" class="w-full p-4 sm:p-5 text-left flex items-center justify-between text-sm font-bold text-white hover:text-brand-sky transition">
+            <span>Can I enroll in only one subject for +2 Tuition (e.g., Mathematics or Physics)?</span>
+            <i class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform duration-200"></i>
+          </button>
+          <div class="faq-answer hidden px-4 sm:px-5 pb-5 text-xs text-slate-300 leading-relaxed border-t border-slate-800/60 pt-3">
+            Yes! Through our <strong class="text-white">+2 Success Pathway Bridge</strong>, students can enroll in individual subjects starting at ₹3,000 per subject. You receive the complete study material, weekly test series, and mentor support for that specific subject.
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="faq-card rounded-2xl bg-slate-900/80 border border-slate-800 overflow-hidden">
+          <button onclick="toggleFaq(this)" class="w-full p-4 sm:p-5 text-left flex items-center justify-between text-sm font-bold text-white hover:text-brand-sky transition">
+            <span>Where is the offline campus located in Perinthalmanna?</span>
+            <i class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform duration-200"></i>
+          </button>
+          <div class="faq-answer hidden px-4 sm:px-5 pb-5 text-xs text-slate-300 leading-relaxed border-t border-slate-800/60 pt-3">
+            Our central learning hub is conveniently located at: <strong class="text-white">City Centre, Above Sub Treasury, Pattambi Road, Perinthalmanna, Malappuram (DT), Keralam, PIN: 679322</strong>. Students within travel distance can attend offline batches, while students further away can join our live Virtual School.
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="faq-card rounded-2xl bg-slate-900/80 border border-slate-800 overflow-hidden">
+          <button onclick="toggleFaq(this)" class="w-full p-4 sm:p-5 text-left flex items-center justify-between text-sm font-bold text-white hover:text-brand-sky transition">
+            <span>How does the NMMS Mock Test with Malappuram Block Panchayat work?</span>
+            <i class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform duration-200"></i>
+          </button>
+          <div class="faq-answer hidden px-4 sm:px-5 pb-5 text-xs text-slate-300 leading-relaxed border-t border-slate-800/60 pt-3">
+            Under the official <strong class="text-amber-400">imbibe 26-27</strong> initiative, Class 8 students from government & aided schools are provided structured coaching and mock test series consisting of Paper 1 (SAT: 10:00 AM - 11:30 AM) and Paper 2 (MAT: 1:00 PM - 2:30 PM) using real OMR sheets to build speed and accuracy.
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="faq-card rounded-2xl bg-slate-900/80 border border-slate-800 overflow-hidden">
+          <button onclick="toggleFaq(this)" class="w-full p-4 sm:p-5 text-left flex items-center justify-between text-sm font-bold text-white hover:text-brand-sky transition">
+            <span>What qualification is required for EduForge Teacher Training (FTTP)?</span>
+            <i class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform duration-200"></i>
+          </button>
+          <div class="faq-answer hidden px-4 sm:px-5 pb-5 text-xs text-slate-300 leading-relaxed border-t border-slate-800/60 pt-3">
+            The Foundation & KG Teacher Training Programme (FTTP) is open to candidates who have completed +2 or graduation and have a passion for pre-primary/primary education. Both weekend and weekday regular batches are available, concluding with the "Tomorrow's Teacher" internship.
+          </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="faq-card rounded-2xl bg-slate-900/80 border border-slate-800 overflow-hidden">
+          <button onclick="toggleFaq(this)" class="w-full p-4 sm:p-5 text-left flex items-center justify-between text-sm font-bold text-white hover:text-brand-sky transition">
+            <span>What happens if a student misses a live virtual session?</span>
+            <i class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform duration-200"></i>
+          </button>
+          <div class="faq-answer hidden px-4 sm:px-5 pb-5 text-xs text-slate-300 leading-relaxed border-t border-slate-800/60 pt-3">
+            Every live lecture conducted on InLine's Virtual School is automatically archived in HD with digital whiteboard notes. Students can watch recordings on their portal 24/7 and clear queries directly with the subject mentor during dedicated doubt hours.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CAMPUS HUB, CONTACT & PERINTHALMANNA LOCATION -->
+  <section id="contact" class="py-20 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        
+        <!-- Left: Official Institutional Contact Details -->
+        <div class="lg:col-span-5 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-sky/10 text-brand-sky border border-brand-sky/20 text-xs font-bold uppercase tracking-wider">
+            InLine Headquarters & Campus
+          </div>
+
+          <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-white">
+            Connect with Our Academic Counselors
+          </h2>
+
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Have questions regarding batch timings, fee concessions, or scholarship mock tests? Reach out to our campus office in Perinthalmanna or chat with us on WhatsApp.
+          </p>
+
+          <!-- Address Card -->
+          <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800">
+            <div class="flex items-start gap-3">
+              <div class="w-9 h-9 rounded-xl bg-rose-500/20 text-rose-400 flex items-center justify-center shrink-0 text-base">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-white text-sm">Physical Campus Address</h3>
+                <p class="text-xs text-slate-300 mt-1 leading-relaxed">
+                  City Centre, Above Sub Treasury,<br>
+                  Pattambi Road, Perinthalmanna,<br>
+                  Malappuram (DT), Keralam, PIN: 679322
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Official Phone Helplines -->
+          <div class="space-y-2.5">
+            <div class="text-xs uppercase font-extrabold tracking-wider text-slate-400">Department Helplines</div>
+            
+            <a href="tel:+919061211227" class="p-3.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-brand-sky flex items-center justify-between text-xs transition">
+              <span class="text-slate-200"><i class="fa-solid fa-phone text-brand-sky mr-2"></i> +2 & Virtual School Helpdesk</span>
+              <span class="font-bold text-white">+91 9061211227</span>
+            </a>
+
+            <a href="tel:+919061211226" class="p-3.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-emerald-500 flex items-center justify-between text-xs transition">
+              <span class="text-slate-200"><i class="fa-solid fa-phone text-emerald-400 mr-2"></i> Admissions & Academic Counselor</span>
+              <span class="font-bold text-white">+91 9061211226</span>
+            </a>
+
+            <a href="tel:+919061211229" class="p-3.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-amber-500 flex items-center justify-between text-xs transition">
+              <span class="text-slate-200"><i class="fa-solid fa-phone text-amber-400 mr-2"></i> Competitive Exams (IGNITE / NMMS)</span>
+              <span class="font-bold text-white">+91 9061211229</span>
+            </a>
+
+            <a href="tel:+918086910451" class="p-3.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-violet-500 flex items-center justify-between text-xs transition">
+              <span class="text-slate-200"><i class="fa-solid fa-phone text-violet-400 mr-2"></i> Teacher Training (EduForge / FTTP)</span>
+              <span class="font-bold text-white">+91 8086910451</span>
+            </a>
+          </div>
+
+          <!-- Email -->
+          <div class="flex items-center gap-2 text-xs text-slate-400">
+            <i class="fa-solid fa-envelope text-brand-sky"></i>
+            <span>Official Email:</span>
+            <a href="mailto:contactinlineedu@gmail.com" class="text-white hover:underline font-semibold">contactinlineedu@gmail.com</a>
+          </div>
+
+        </div>
+
+        <!-- Right: Message / Inquiry Form with Direct WhatsApp Dispatch -->
+        <div class="lg:col-span-7">
+          <div class="p-6 sm:p-10 rounded-3xl glass-card border border-slate-800 shadow-2xl">
+            <h3 class="font-display text-2xl font-bold text-white">Send Us an Academic Inquiry</h3>
+            <p class="text-xs text-slate-400 mt-1 mb-6">Our academic coordinator will get in touch with curriculum and fee details.</p>
+
+            <form id="contactForm" onsubmit="handleContactSubmit(event)" class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5">Your Full Name *</label>
+                  <input type="text" id="contactName" required placeholder="Enter student or parent name" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-brand-sky">
+                </div>
+                <div>
+                  <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5">WhatsApp Mobile *</label>
+                  <input type="tel" id="contactPhone" required placeholder="10-digit phone number" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-brand-sky">
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5">Area of Interest *</label>
+                  <select id="contactProgram" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-brand-sky">
+                    <option value="+2 Tuition (CBSE / State)">+2 Tuition (CBSE / State)</option>
+                    <option value="High School Tuition (Classes 5-10)">High School Tuition (Classes 5-10)</option>
+                    <option value="NMMS Coaching & Mock Tests">NMMS Coaching & Mock Tests</option>
+                    <option value="NEET / JEE Foundation">NEET / JEE Foundation</option>
+                    <option value="Talentium AI & Aptitude Skills">Talentium AI & Aptitude Skills</option>
+                    <option value="EduForge Teacher Training (FTTP)">EduForge Teacher Training (FTTP)</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5">Your Location / City</label>
+                  <input type="text" id="contactLocation" placeholder="e.g. Perinthalmanna, Manjeri, Malappuram" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-brand-sky">
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5">Any Specific Questions?</label>
+                <textarea id="contactMessage" rows="3" placeholder="Tell us your current class, required subjects, or questions..." class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-brand-sky"></textarea>
+              </div>
+
+              <div class="pt-2">
+                <button type="submit" class="w-full py-4 rounded-xl font-bold bg-gradient-to-r from-brand-sky via-indigo-600 to-purple-600 hover:from-sky-400 hover:to-indigo-500 text-white text-xs uppercase tracking-wider shadow-xl shadow-sky-500/20 transition flex items-center justify-center gap-2">
+                  <i class="fa-solid fa-paper-plane"></i> Submit Inquiry via WhatsApp
+                </button>
+              </div>
+            </form>
+
+            <div id="contactSuccessAlert" class="hidden mt-4 p-3.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs text-center">
+              <i class="fa-solid fa-circle-check mr-1.5"></i> Thank you! Your inquiry has been forwarded to our WhatsApp advisor.
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-950 border-t border-slate-800/80 pt-16 pb-12 text-slate-400 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-slate-800">
+        
+        <!-- Col 1: Brand & Bio -->
+        <div class="lg:col-span-2 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="h-12 px-3 py-1 bg-white rounded-xl shadow-md flex items-center justify-center border border-slate-200">
+              <img src="LOGO.jpeg" alt="InLine Logo" class="h-full w-auto object-contain">
+            </div>
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-brand-sky">InLine Educational EcoSystem</span>
+              <p class="text-[10px] text-slate-400">The Virtual School • Perinthalmanna</p>
+            </div>
+          </div>
+          <p class="text-slate-400 leading-relaxed max-w-sm">
+            Empowering students from foundational schooling to professional career success through personalized mentorship, virtual learning, and Panchayat-level scholarship programs.
+          </p>
+          <div class="pt-1 flex items-center gap-3 text-slate-300">
+            <a href="https://wa.me/919061211227" class="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 hover:text-emerald-400 hover:border-emerald-500 flex items-center justify-center transition">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+            <a href="tel:+919061211227" class="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 hover:text-brand-sky hover:border-brand-sky flex items-center justify-center transition">
+              <i class="fa-solid fa-phone"></i>
+            </a>
+            <a href="mailto:contactinlineedu@gmail.com" class="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 hover:text-rose-400 hover:border-rose-500 flex items-center justify-center transition">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: The 4 Wings -->
+        <div class="space-y-3">
+          <div class="font-bold text-white uppercase tracking-wider text-[11px]">The 4 Wings</div>
+          <ul class="space-y-2">
+            <li><a href="#wings" onclick="switchWing('ignite')" class="hover:text-white transition">IGNITE (NMMS & Entrances)</a></li>
+            <li><a href="#wings" onclick="switchWing('virtual-school')" class="hover:text-white transition">The Virtual School (5-12 Tuition)</a></li>
+            <li><a href="#wings" onclick="switchWing('talentium')" class="hover:text-white transition">Talentium (AI & Career Skills)</a></li>
+            <li><a href="#wings" onclick="switchWing('eduforge')" class="hover:text-white transition">EduForge (Teacher Training FTTP)</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Quick Navigation -->
+        <div class="space-y-3">
+          <div class="font-bold text-white uppercase tracking-wider text-[11px]">Quick Access</div>
+          <ul class="space-y-2">
+            <li><a href="#calculator" class="hover:text-amber-400 transition">Tuition Fee Calculator</a></li>
+            <li><a href="#mock-test" class="hover:text-white transition">NMMS 2026-27 Mock Test</a></li>
+            <li><a href="#gallery" class="hover:text-white transition">+2 Tuition Posters</a></li>
+            <li><a href="#campus-life" class="hover:text-white transition">Campus Video Reels</a></li>
+            <li><a href="#contact" class="hover:text-white transition">Perinthalmanna Campus Location</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Campus Desk -->
+        <div class="space-y-3">
+          <div class="font-bold text-white uppercase tracking-wider text-[11px]">Head Campus</div>
+          <p class="text-slate-400 text-xs leading-relaxed">
+            City Centre, Above Sub Treasury,<br>
+            Pattambi Road, Perinthalmanna,<br>
+            Malappuram, Kerala - 679322
+          </p>
+          <div class="text-[11px] text-slate-300 font-semibold">
+            Phone: <a href="tel:+919061211227" class="text-brand-sky hover:underline">+91 9061211227</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Copyright Bar -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-300">
+        <div>
+          © 2026 InLine – An Integrated Educational EcoSystem (The Virtual School). All rights reserved.
+        </div>
+        <div class="flex items-center gap-4">
+          <span>Perinthalmanna, Malappuram DT, Kerala</span>
+          <span>•</span>
+          <a href="#" class="hover:text-slate-200">Privacy & Terms</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP CTA BUTTON -->
+  <div class="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-2">
+    <a href="https://wa.me/919061211227?text=Hello%20InLine%20Team!%20I%20would%20like%20to%20inquire%20about%20admissions%20and%20courses." 
+       target="_blank" 
+       class="group relative flex items-center gap-3 px-4 py-3 rounded-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs shadow-2xl shadow-emerald-500/40 hover:scale-105 active:scale-95 transition duration-300">
+      <span class="w-2.5 h-2.5 rounded-full bg-white animate-ping absolute -top-0.5 -right-0.5"></span>
+      <i class="fa-brands fa-whatsapp text-xl text-slate-950"></i>
+      <span class="hidden sm:inline">Admissions Helpdesk</span>
+    </a>
+  </div>
+
+  <!-- MODAL: IMAGE POSTER LIGHTBOX -->
+  <div id="posterModal" class="fixed inset-0 z-50 hidden bg-black/90 backdrop-blur-md flex items-center justify-center p-4">
+    <div class="relative max-w-4xl w-full max-h-[92vh] flex flex-col bg-slate-900 rounded-3xl overflow-hidden border border-slate-700 shadow-2xl">
+      
+      <!-- Modal Header -->
+      <div class="p-4 bg-slate-950 border-b border-slate-800 flex items-center justify-between">
+        <div>
+          <h3 id="modalPosterTitle" class="font-bold text-white text-sm sm:text-base">InLine Official Poster</h3>
+          <p id="modalPosterSubtitle" class="text-xs text-slate-400">High-Resolution Notice</p>
+        </div>
+        <button onclick="closePosterModal()" class="w-8 h-8 rounded-full bg-slate-800 hover:bg-slate-700 text-white flex items-center justify-center text-sm transition">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <!-- Modal Image Viewer -->
+      <div class="relative flex-1 bg-black overflow-auto flex items-center justify-center p-2 min-h-[300px]">
+        <img id="modalPosterImg" src="poster1.jpg" alt="InLine Poster Preview" class="max-h-[72vh] w-auto object-contain rounded-lg">
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="p-4 bg-slate-950 border-t border-slate-800 flex flex-wrap items-center justify-between gap-3 text-xs">
+        <div class="flex items-center gap-2">
+          <button onclick="prevPosterModal()" class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-200 hover:bg-slate-700 font-bold">
+            <i class="fa-solid fa-chevron-left mr-1"></i> Prev
+          </button>
+          <button onclick="nextPosterModal()" class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-200 hover:bg-slate-700 font-bold">
+            Next <i class="fa-solid fa-chevron-right ml-1"></i>
+          </button>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <a id="modalWhatsAppInquire" href="https://wa.me/919061211227" target="_blank" class="px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold flex items-center gap-1.5">
+            <i class="fa-brands fa-whatsapp text-sm"></i> Inquire About This Program
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MODAL: ENROLLMENT & TRIAL BOOKING POPUP -->
+  <div id="enrollmentModal" class="fixed inset-0 z-50 hidden bg-black/85 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="relative max-w-lg w-full bg-slate-900 rounded-3xl overflow-hidden border border-slate-700 shadow-2xl p-6 sm:p-8 animate-fadeIn">
+      
+      <button onclick="closeModal('enrollmentModal')" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-slate-800 hover:bg-slate-700 text-white flex items-center justify-center text-sm transition">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="text-left mb-6">
+        <div class="flex items-center gap-3 mb-3">
+          <div class="h-10 px-2.5 py-1 bg-white rounded-xl shadow-sm flex items-center border border-slate-200">
+            <img src="LOGO.jpeg" alt="InLine Logo" class="h-full w-auto object-contain">
+          </div>
+          <span class="inline-block px-2.5 py-1 rounded-full text-[10px] font-extrabold uppercase bg-brand-sky/15 text-brand-sky border border-brand-sky/20">
+            Admissions 2026-27
+          </span>
+        </div>
+        <h3 class="font-display text-2xl font-bold text-white">Enroll with InLine</h3>
+        <p class="text-xs text-slate-400 mt-1">Join Perinthalmanna Hybrid or Live Virtual School.</p>
+      </div>
+
+      <form onsubmit="handleQuickEnroll(event)" class="space-y-4">
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1">Student Full Name *</label>
+          <input type="text" id="quickName" required placeholder="Student Name" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-brand-sky">
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1">WhatsApp Mobile *</label>
+            <input type="tel" id="quickPhone" required placeholder="Phone Number" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-brand-sky">
+          </div>
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1">Current Class / Target *</label>
+            <select id="quickClass" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-brand-sky">
+              <option value="+2 Science">+2 Science</option>
+              <option value="+2 Commerce">+2 Commerce</option>
+              <option value="+1 Science">+1 Science</option>
+              <option value="+1 Commerce">+1 Commerce</option>
+              <option value="Class 10 (SSLC/CBSE)">Class 10 (SSLC/CBSE)</option>
+              <option value="Class 9">Class 9</option>
+              <option value="Class 8 (NMMS)">Class 8 (NMMS)</option>
+              <option value="Classes 5-7">Classes 5 – 7</option>
+              <option value="EduForge (Teacher Training)">EduForge (Teacher Training)</option>
+              <option value="Talentium (Skill Courses)">Talentium (Skill Courses)</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1">Preferred Learning Mode</label>
+          <div class="grid grid-cols-2 gap-2 text-xs">
+            <label class="flex items-center gap-2 p-2.5 rounded-xl bg-slate-950 border border-slate-800 cursor-pointer">
+              <input type="radio" name="quickMode" value="Perinthalmanna Hybrid" checked class="text-brand-sky">
+              <span class="text-slate-300 text-[11px]">Perinthalmanna Hub</span>
+            </label>
+            <label class="flex items-center gap-2 p-2.5 rounded-xl bg-slate-950 border border-slate-800 cursor-pointer">
+              <input type="radio" name="quickMode" value="Live Virtual School" class="text-brand-sky">
+              <span class="text-slate-300 text-[11px]">Virtual School (Online)</span>
+            </label>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1">Your Place / District</label>
+          <input type="text" id="quickPlace" placeholder="e.g. Perinthalmanna, Malappuram" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-brand-sky">
+        </div>
+
+        <button type="submit" class="w-full py-3.5 rounded-xl font-bold bg-gradient-to-r from-brand-sky to-indigo-600 hover:from-sky-400 hover:to-indigo-500 text-white text-xs uppercase tracking-wider shadow-lg shadow-sky-500/20 transition flex items-center justify-center gap-2">
+          <i class="fa-brands fa-whatsapp text-sm"></i> Confirm Application on WhatsApp
+        </button>
+      </form>
+
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT LOGIC & STATE MANAGEMENT -->
+  <script>
+    // POSTER DATA REPOSITORY
+    const postersData = [
+      {
+        src: "poster1.jpg",
+        title: "+2 Tuition: CBSE & State Syllabus",
+        subtitle: "Dream of +2 Victory • Physics, Chemistry, Maths, Bio, Commerce",
+        tag: "plus2",
+        phone: "9061211227"
+      },
+      {
+        src: "poster2.jpg",
+        title: "Classes 5 to 10: Academic Excellence",
+        subtitle: "Mathematics, Science, Social Science, Malayalam, English",
+        tag: "classes510",
+        phone: "9061211227"
+      },
+      {
+        src: "poster3.jpg",
+        title: "imbibe 26-27 NMMS Coaching Program",
+        subtitle: "Malappuram Block Panchayat • NMMS Mock Test Schedule (SAT & MAT)",
+        tag: "nmms",
+        phone: "9061211229"
+      },
+      {
+        src: "poster4.jpg",
+        title: "VidhyaLine | InLine NMMS Mock Test Center",
+        subtitle: "Classroom snapshots, exam hall in action, dedicated mentors",
+        tag: "nmms",
+        phone: "9061211227"
+      },
+      {
+        src: "poster5.jpg",
+        title: "+2 Success Pathway Bridge",
+        subtitle: "₹3,000 Per Subject • Specialized High-Scoring Modules",
+        tag: "plus2",
+        phone: "9061211227"
+      }
+    ];
+
+    let currentHeroPosterIndex = 0;
+    let currentModalPosterIndex = 0;
+
+    // Mobile Navigation Drawer Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close mobile menu on clicking any link inside
+    document.querySelectorAll('#mobileMenu a').forEach(item => {
+      item.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // HERO POSTER SWITCHER
+    function switchHeroPoster(idx) {
+      currentHeroPosterIndex = idx;
+      const data = postersData[idx];
+      const img = document.getElementById('heroPosterImg');
+      const title = document.getElementById('heroPosterTitle');
+      const sub = document.getElementById('heroPosterSub');
+
+      img.src = data.src;
+      title.innerText = data.title;
+      sub.innerText = data.subtitle;
+
+      // Update button styling
+      for (let i = 0; i < 5; i++) {
+        const btn = document.getElementById(`pBtn${i}`);
+        if (i === idx) {
+          btn.className = "w-6 h-6 rounded text-[11px] font-bold bg-brand-sky text-slate-950 transition";
+        } else {
+          btn.className = "w-6 h-6 rounded text-[11px] font-bold bg-slate-800 text-slate-300 hover:bg-slate-700 transition";
+        }
+      }
+    }
+
+    // Auto rotate hero poster every 7 seconds
+    setInterval(() => {
+      const nextIdx = (currentHeroPosterIndex + 1) % postersData.length;
+      switchHeroPoster(nextIdx);
+    }, 7000);
+
+    // WING TABS SWITCHER
+    function switchWing(wingKey) {
+      const wings = ['ignite', 'virtual-school', 'talentium', 'eduforge'];
+      wings.forEach(w => {
+        const content = document.getElementById(`wingContent-${w}`);
+        const btn = document.getElementById(`tabBtn-${w}`);
+        if (w === wingKey) {
+          content.classList.remove('hidden');
+          content.classList.add('block');
+          btn.className = "wing-tab-btn px-5 py-3 rounded-xl text-xs sm:text-sm font-bold transition flex items-center gap-2 bg-gradient-to-r from-brand-sky to-indigo-600 text-white shadow-md";
+        } else {
+          content.classList.add('hidden');
+          content.classList.remove('block');
+          btn.className = "wing-tab-btn px-5 py-3 rounded-xl text-xs sm:text-sm font-bold text-slate-400 hover:text-white transition flex items-center gap-2";
+        }
+      });
+    }
+
+    // POSTER FILTERING
+    function filterPosters(category) {
+      const items = document.querySelectorAll('.poster-item');
+      items.forEach(el => {
+        if (category === 'all' || el.classList.contains(category)) {
+          el.style.display = 'block';
+        } else {
+          el.style.display = 'none';
+        }
+      });
+
+      const buttons = ['all', 'plus2', 'classes510', 'nmms'];
+      buttons.forEach(b => {
+        const btn = document.getElementById(`flt-${b}`);
+        if (b === category) {
+          btn.className = "poster-flt-btn px-3.5 py-2 rounded-xl bg-brand-sky text-slate-950 font-bold transition";
+        } else {
+          btn.className = "poster-flt-btn px-3.5 py-2 rounded-xl bg-slate-800 text-slate-300 hover:text-white font-bold transition";
+        }
+      });
+    }
+
+    // POSTER LIGHTBOX MODAL
+    function openPosterModal(index) {
+      currentModalPosterIndex = index;
+      renderPosterModal();
+      document.getElementById('posterModal').classList.remove('hidden');
+    }
+
+    function closePosterModal() {
+      document.getElementById('posterModal').classList.add('hidden');
+    }
+
+    function nextPosterModal() {
+      currentModalPosterIndex = (currentModalPosterIndex + 1) % postersData.length;
+      renderPosterModal();
+    }
+
+    function prevPosterModal() {
+      currentModalPosterIndex = (currentModalPosterIndex - 1 + postersData.length) % postersData.length;
+      renderPosterModal();
+    }
+
+    function renderPosterModal() {
+      const data = postersData[currentModalPosterIndex];
+      document.getElementById('modalPosterImg').src = data.src;
+      document.getElementById('modalPosterTitle').innerText = data.title;
+      document.getElementById('modalPosterSubtitle').innerText = data.subtitle;
+      const message = encodeURIComponent(`Hello InLine Team! I am viewing your poster "${data.title}" and want admission details.`);
+      document.getElementById('modalWhatsAppInquire').href = `https://wa.me/91${data.phone}?text=${message}`;
+    }
+
+    // Close modal on escape key
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closePosterModal();
+        closeModal('enrollmentModal');
+      }
+    });
+
+    // DYNAMIC TUITION CALCULATOR STATE & LOGIC
+    let currentCalcBase = 3000;
+    let currentCalcPlan = "+1 / +2 Science";
+
+    function setCalcLevel(lvlKey, basePrice) {
+      currentCalcBase = basePrice;
+      const names = {
+        plus2_science: "+1 / +2 Science",
+        plus2_commerce: "+1 / +2 Commerce",
+        highschool: "Classes 8 – 10",
+        upperprimary: "Classes 5 – 7",
+        nmms: "NMMS Intensive",
+        eduforge: "EduForge (FTTP)"
+      };
+      currentCalcPlan = names[lvlKey] || "+1 / +2 Science";
+
+      // Toggle active button border
+      document.querySelectorAll('.calc-level-btn').forEach(btn => {
+        btn.classList.remove('border-brand-sky', 'bg-brand-sky/15', 'text-white');
+        btn.classList.add('border-slate-800', 'bg-slate-900', 'text-slate-300');
+      });
+      const activeBtn = document.getElementById(`lvl-${lvlKey}`);
+      if (activeBtn) {
+        activeBtn.classList.remove('border-slate-800', 'bg-slate-900', 'text-slate-300');
+        activeBtn.classList.add('border-brand-sky', 'bg-brand-sky/15', 'text-white');
+      }
+
+      updateCalc();
+    }
+
+    function updateCalc() {
+      const checkboxes = document.querySelectorAll('#calcSubjectsContainer input[type="checkbox"]:checked');
+      const count = checkboxes.length;
+      const syllabus = document.getElementById('calcSyllabus').value;
+      const mode = document.getElementById('calcMode').value;
+
+      document.getElementById('calcPlanBadge').innerText = currentCalcPlan;
+      document.getElementById('calcBaseRate').innerText = `₹${currentCalcBase.toLocaleString()}`;
+      document.getElementById('calcSummarySubjects').innerText = `${count} Subject${count === 1 ? '' : 's'}`;
+      document.getElementById('calcSummaryMode').innerText = mode.includes('Virtual') ? 'Virtual School' : 'Perinthalmanna Hybrid';
+
+      let rawTotal = count * currentCalcBase;
+      let discount = 0;
+
+      // 3 or more subjects discount bonus
+      if (count >= 3) {
+        discount = count * 350;
+      }
+
+      let netTotal = Math.max(0, rawTotal - discount);
+      if (count === 0) netTotal = 0;
+
+      document.getElementById('calcDiscountAmount').innerText = discount > 0 ? `- ₹${discount.toLocaleString()}` : `₹0`;
+      document.getElementById('calcTotalDisplay').innerText = `₹${netTotal.toLocaleString()}`;
+    }
+
+    function dispatchWhatsAppCalc() {
+      const checkboxes = document.querySelectorAll('#calcSubjectsContainer input[type="checkbox"]:checked');
+      const subjects = Array.from(checkboxes).map(c => c.value).join(', ');
+      const syllabus = document.getElementById('calcSyllabus').value;
+      const mode = document.getElementById('calcMode').value;
+      const total = document.getElementById('calcTotalDisplay').innerText;
+
+      const message = `Hello InLine Team! I used your Fee Calculator for ${currentCalcPlan}.\nSyllabus: ${syllabus}\nMode: ${mode}\nSubjects: ${subjects || 'General'}\nEstimated Fee: ${total}\nPlease share details on batch schedule and admission steps.`;
+      const url = `https://wa.me/919061211227?text=${encodeURIComponent(message)}`;
+      window.open(url, '_blank');
+    }
+
+    // MOCK TEST FORM & CONFETTI CELEBRATION
+    let latestMockData = null;
+    function handleMockSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('mockName').value.trim();
+      const school = document.getElementById('mockSchool').value.trim();
+      const panchayat = document.getElementById('mockPanchayat').value.trim();
+      const phone = document.getElementById('mockPhone').value.trim();
+      const target = document.getElementById('mockTarget').value;
+
+      const randomId = 'INL-MOCK-' + Math.floor(1000 + Math.random() * 9000);
+      latestMockData = { name, school, panchayat, phone, target, id: randomId };
+
+      document.getElementById('mockTokenDisplay').innerText = randomId;
+      document.getElementById('mockSuccessBox').classList.remove('hidden');
+
+      // Trigger Confetti Celebration
+      if (typeof confetti === 'function') {
+        confetti({
+          particleCount: 70,
+          spread: 60,
+          origin: { y: 0.7 }
+        });
+      }
+    }
+
+    function confirmOnWhatsAppMock() {
+      if (!latestMockData) return;
+      const msg = `Hello InLine Team! I registered for the Mock Test.\nToken ID: ${latestMockData.id}\nStudent Name: ${latestMockData.name}\nSchool: ${latestMockData.school}\nPanchayat/Place: ${latestMockData.panchayat}\nTarget: ${latestMockData.target}\nMobile: ${latestMockData.phone}\nPlease confirm my hall ticket seat.`;
+      window.open(`https://wa.me/919061211229?text=${encodeURIComponent(msg)}`, '_blank');
+    }
+
+    // CONTACT FORM
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('contactName').value.trim();
+      const phone = document.getElementById('contactPhone').value.trim();
+      const prog = document.getElementById('contactProgram').value;
+      const loc = document.getElementById('contactLocation').value.trim();
+      const msg = document.getElementById('contactMessage').value.trim();
+
+      const waMsg = `Hello InLine Team!\nInquiry from: ${name}\nPhone: ${phone}\nProgram: ${prog}\nLocation: ${loc || 'Not specified'}\nNote: ${msg || 'None'}`;
+      
+      document.getElementById('contactSuccessAlert').classList.remove('hidden');
+      setTimeout(() => {
+        window.open(`https://wa.me/919061211227?text=${encodeURIComponent(waMsg)}`, '_blank');
+      }, 600);
+    }
+
+    // QUICK ENROLLMENT MODAL
+    function openModal(id) {
+      document.getElementById(id).classList.remove('hidden');
+    }
+    function closeModal(id) {
+      document.getElementById(id).classList.add('hidden');
+    }
+
+    function openEnrollWithPrefill(prefProgram) {
+      openModal('enrollmentModal');
+      const select = document.getElementById('quickClass');
+      for (let i = 0; i < select.options.length; i++) {
+        if (prefProgram.toLowerCase().includes(select.options[i].text.toLowerCase())) {
+          select.selectedIndex = i;
+          break;
+        }
+      }
+    }
+
+    function handleQuickEnroll(e) {
+      e.preventDefault();
+      const name = document.getElementById('quickName').value.trim();
+      const phone = document.getElementById('quickPhone').value.trim();
+      const cls = document.getElementById('quickClass').value;
+      const mode = document.querySelector('input[name="quickMode"]:checked').value;
+      const place = document.getElementById('quickPlace').value.trim();
+
+      const waMsg = `Hello InLine Admissions Team!\nI want to apply for 2026-27:\nStudent: ${name}\nMobile: ${phone}\nTarget Course: ${cls}\nMode: ${mode}\nPlace: ${place || 'Kerala'}`;
+      closeModal('enrollmentModal');
+      window.open(`https://wa.me/919061211227?text=${encodeURIComponent(waMsg)}`, '_blank');
+    }
+
+    // FAQ TOGGLE
+    function toggleFaq(btn) {
+      const answer = btn.nextElementSibling;
+      const icon = btn.querySelector('i');
+      if (answer.classList.contains('hidden')) {
+        answer.classList.remove('hidden');
+        icon.classList.add('rotate-180');
+      } else {
+        answer.classList.add('hidden');
+        icon.classList.remove('rotate-180');
+      }
+    }
+
+    // VIDEO PLAYER HELPER
+    function playTargetVideo(id) {
+      const vid = document.getElementById(id);
+      if (vid) {
+        if (vid.paused) {
+          vid.play();
+        } else {
+          vid.pause();
+        }
+      }
+    }
+
+    // INITIALIZE CALCULATOR ON LOAD
+    document.addEventListener('DOMContentLoaded', () => {
+      updateCalc();
+    });
+  </script>
+
+</body>
+</html>
